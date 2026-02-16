@@ -1,4 +1,4 @@
-export type Category = 'Chatbots' | 'Code Assistants' | 'Image Gen' | 'Writing' | 'Data Analysis' | 'Other';
+export type Category = string;
 export type RiskLevel = 'Low' | 'Medium' | 'High' | 'Critical';
 
 export interface AITool {
@@ -1530,15 +1530,26 @@ function mapRowToTool(row: AIToolRow): AITool {
 export async function fetchTools(): Promise<AITool[]> {
   try {
     const { supabase } = await import('@/lib/supabase');
-    const { data, error } = await supabase
-      .from('ai_tools')
-      .select('*')
-      .order('name');
+    // Supabase has a default limit of 1000, so we need to paginate
+    const allRows: AIToolRow[] = [];
+    let from = 0;
+    const pageSize = 1000;
+    while (true) {
+      const { data, error } = await supabase
+        .from('ai_tools')
+        .select('*')
+        .order('name')
+        .range(from, from + pageSize - 1);
 
-    if (error) throw error;
-    if (!data || data.length === 0) return tools;
+      if (error) throw error;
+      if (!data || data.length === 0) break;
+      allRows.push(...(data as AIToolRow[]));
+      if (data.length < pageSize) break;
+      from += pageSize;
+    }
 
-    return (data as AIToolRow[]).map(mapRowToTool);
+    if (allRows.length === 0) return tools;
+    return allRows.map(mapRowToTool);
   } catch (e) {
     console.error('Failed to fetch tools from Supabase:', e);
     return tools;
@@ -1580,4 +1591,9 @@ export function getRiskColor(score: number): string {
 
 export function getCategories(): Category[] {
   return ['Chatbots', 'Code Assistants', 'Image Gen', 'Writing', 'Data Analysis', 'Other'];
+}
+
+export function getCategoriesFromTools(toolsList: AITool[]): Category[] {
+  const cats = new Set(toolsList.map(t => t.category));
+  return Array.from(cats).sort();
 }

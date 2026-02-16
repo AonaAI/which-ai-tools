@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { tools as staticTools, fetchTools, getCategories, getRiskLevel, getRiskColor, type Category, type RiskLevel } from '@/data/tools';
+import { tools as staticTools, fetchTools, getCategories, getCategoriesFromTools, getRiskLevel, getRiskColor, type Category, type RiskLevel } from '@/data/tools';
 import Link from 'next/link';
 import ToolLogo from '@/components/ToolLogo';
 
@@ -17,7 +17,7 @@ export default function Home() {
     fetchTools().then(setAllTools);
   }, []);
 
-  const categories = getCategories();
+  const categories = allTools.length > staticTools.length ? getCategoriesFromTools(allTools) : getCategories();
   const riskLevels: RiskLevel[] = ['Low', 'Medium', 'High', 'Critical'];
 
   const filteredTools = useMemo(() => {
@@ -71,9 +71,9 @@ export default function Home() {
           </div>
 
           {/* Filters */}
-          <div className="flex flex-wrap gap-4 justify-center items-center">
+          <div className="flex flex-col gap-4 items-center">
             {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 justify-center max-w-4xl">
               <button
                 onClick={() => setSelectedCategory('All')}
                 className={`px-4 py-2 rounded-lg transition ${
