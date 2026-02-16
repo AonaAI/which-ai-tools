@@ -6,6 +6,7 @@ export interface AITool {
   slug: string;
   category: Category;
   description: string;
+  logoUrl: string;
   riskScore: number; // 1-10
   dataHandling: {
     storage: string;
@@ -26,6 +27,7 @@ export const tools: AITool[] = [
   {
     name: 'ChatGPT',
     slug: 'chatgpt',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=openai.com&sz=128',
     category: 'Chatbots',
     description: 'OpenAI\'s conversational AI assistant for general-purpose tasks',
     riskScore: 6,
@@ -55,6 +57,7 @@ export const tools: AITool[] = [
   {
     name: 'Claude',
     slug: 'claude',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=anthropic.com&sz=128',
     category: 'Chatbots',
     description: 'Anthropic\'s AI assistant focused on helpful, harmless, and honest interactions',
     riskScore: 4,
@@ -81,6 +84,7 @@ export const tools: AITool[] = [
   {
     name: 'Google Gemini',
     slug: 'google-gemini',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=deepmind.google&sz=128',
     category: 'Chatbots',
     description: 'Google\'s multimodal AI model integrated with Google services',
     riskScore: 7,
@@ -109,6 +113,7 @@ export const tools: AITool[] = [
   {
     name: 'Perplexity AI',
     slug: 'perplexity',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128',
     category: 'Chatbots',
     description: 'AI-powered search and answer engine with citations',
     riskScore: 5,
@@ -136,6 +141,7 @@ export const tools: AITool[] = [
   {
     name: 'DeepSeek',
     slug: 'deepseek',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=deepseek.com&sz=128',
     category: 'Chatbots',
     description: 'Chinese AI chatbot and coding assistant',
     riskScore: 9,
@@ -165,6 +171,7 @@ export const tools: AITool[] = [
   {
     name: 'Microsoft Copilot',
     slug: 'microsoft-copilot',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=microsoft.com&sz=128',
     category: 'Chatbots',
     description: 'Microsoft\'s AI assistant integrated with Microsoft 365',
     riskScore: 3,
@@ -193,6 +200,7 @@ export const tools: AITool[] = [
   {
     name: 'GitHub Copilot',
     slug: 'github-copilot',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=github.com&sz=128',
     category: 'Code Assistants',
     description: 'AI pair programmer from GitHub and OpenAI',
     riskScore: 5,
@@ -221,6 +229,7 @@ export const tools: AITool[] = [
   {
     name: 'Cursor',
     slug: 'cursor',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=cursor.com&sz=128',
     category: 'Code Assistants',
     description: 'AI-first code editor built on VS Code',
     riskScore: 6,
@@ -248,6 +257,7 @@ export const tools: AITool[] = [
   {
     name: 'Tabnine',
     slug: 'tabnine',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=tabnine.com&sz=128',
     category: 'Code Assistants',
     description: 'AI code completion with on-premise options',
     riskScore: 3,
@@ -274,6 +284,7 @@ export const tools: AITool[] = [
   {
     name: 'Codeium',
     slug: 'codeium',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=codeium.com&sz=128',
     category: 'Code Assistants',
     description: 'Free AI code completion and chat',
     riskScore: 7,
@@ -301,6 +312,7 @@ export const tools: AITool[] = [
   {
     name: 'Amazon CodeWhisperer',
     slug: 'amazon-codewhisperer',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=128',
     category: 'Code Assistants',
     description: 'AWS\'s AI coding companion',
     riskScore: 4,
@@ -327,6 +339,7 @@ export const tools: AITool[] = [
   {
     name: 'Replit AI',
     slug: 'replit-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=replit.com&sz=128',
     category: 'Code Assistants',
     description: 'AI assistant built into Replit IDE',
     riskScore: 8,
@@ -356,6 +369,7 @@ export const tools: AITool[] = [
   {
     name: 'Midjourney',
     slug: 'midjourney',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=midjourney.com&sz=128',
     category: 'Image Gen',
     description: 'AI art generator via Discord',
     riskScore: 7,
@@ -384,6 +398,7 @@ export const tools: AITool[] = [
   {
     name: 'DALL-E',
     slug: 'dall-e',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=openai.com&sz=128',
     category: 'Image Gen',
     description: 'OpenAI\'s image generation model',
     riskScore: 5,
@@ -411,6 +426,7 @@ export const tools: AITool[] = [
   {
     name: 'Stable Diffusion',
     slug: 'stable-diffusion',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=stability.ai&sz=128',
     category: 'Image Gen',
     description: 'Open-source image generation model',
     riskScore: 2,
@@ -437,6 +453,7 @@ export const tools: AITool[] = [
   {
     name: 'Adobe Firefly',
     slug: 'adobe-firefly',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=adobe.com&sz=128',
     category: 'Image Gen',
     description: 'Adobe\'s AI image generator for creative workflows',
     riskScore: 3,
@@ -463,6 +480,7 @@ export const tools: AITool[] = [
   {
     name: 'Leonardo AI',
     slug: 'leonardo-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=leonardo.ai&sz=128',
     category: 'Image Gen',
     description: 'AI art platform for game assets and creative work',
     riskScore: 6,
@@ -490,6 +508,7 @@ export const tools: AITool[] = [
   {
     name: 'Grammarly',
     slug: 'grammarly',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=grammarly.com&sz=128',
     category: 'Writing',
     description: 'AI writing assistant and grammar checker',
     riskScore: 5,
@@ -517,6 +536,7 @@ export const tools: AITool[] = [
   {
     name: 'Jasper',
     slug: 'jasper',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=jasper.ai&sz=128',
     category: 'Writing',
     description: 'AI content generation platform for marketing',
     riskScore: 4,
@@ -543,6 +563,7 @@ export const tools: AITool[] = [
   {
     name: 'Copy.ai',
     slug: 'copy-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=copy.ai&sz=128',
     category: 'Writing',
     description: 'AI copywriting tool for marketing and sales',
     riskScore: 5,
@@ -569,6 +590,7 @@ export const tools: AITool[] = [
   {
     name: 'Writesonic',
     slug: 'writesonic',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=writesonic.com&sz=128',
     category: 'Writing',
     description: 'AI writing tool for content creation',
     riskScore: 6,
@@ -594,6 +616,7 @@ export const tools: AITool[] = [
   {
     name: 'Notion AI',
     slug: 'notion-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=notion.so&sz=128',
     category: 'Writing',
     description: 'AI assistant built into Notion workspace',
     riskScore: 4,
@@ -620,6 +643,7 @@ export const tools: AITool[] = [
   {
     name: 'Wordtune',
     slug: 'wordtune',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=wordtune.com&sz=128',
     category: 'Writing',
     description: 'AI writing companion for rewriting and rephrasing',
     riskScore: 5,
@@ -645,6 +669,7 @@ export const tools: AITool[] = [
   {
     name: 'QuillBot',
     slug: 'quillbot',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=quillbot.com&sz=128',
     category: 'Writing',
     description: 'AI paraphrasing and writing tool',
     riskScore: 6,
@@ -672,6 +697,7 @@ export const tools: AITool[] = [
   {
     name: 'Julius AI',
     slug: 'julius-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=julius.ai&sz=128',
     category: 'Data Analysis',
     description: 'AI data analyst for spreadsheets and visualization',
     riskScore: 7,
@@ -699,6 +725,7 @@ export const tools: AITool[] = [
   {
     name: 'Tableau AI',
     slug: 'tableau-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=tableau.com&sz=128',
     category: 'Data Analysis',
     description: 'AI features in Tableau for data insights',
     riskScore: 3,
@@ -725,6 +752,7 @@ export const tools: AITool[] = [
   {
     name: 'Rows AI',
     slug: 'rows-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=rows.com&sz=128',
     category: 'Data Analysis',
     description: 'Spreadsheet with built-in AI analyst',
     riskScore: 6,
@@ -750,6 +778,7 @@ export const tools: AITool[] = [
   {
     name: 'DataRobot',
     slug: 'datarobot',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=datarobot.com&sz=128',
     category: 'Data Analysis',
     description: 'Enterprise AI platform for predictive analytics',
     riskScore: 2,
@@ -778,6 +807,7 @@ export const tools: AITool[] = [
   {
     name: 'HuggingFace',
     slug: 'huggingface',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=huggingface.co&sz=128',
     category: 'Other',
     description: 'Platform for sharing and using AI models',
     riskScore: 5,
@@ -805,6 +835,7 @@ export const tools: AITool[] = [
   {
     name: 'Runway ML',
     slug: 'runway-ml',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=runwayml.com&sz=128',
     category: 'Image Gen',
     description: 'AI video and image generation platform',
     riskScore: 6,
@@ -830,6 +861,7 @@ export const tools: AITool[] = [
   {
     name: 'ElevenLabs',
     slug: 'elevenlabs',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128',
     category: 'Other',
     description: 'AI voice generation and cloning',
     riskScore: 8,
@@ -858,6 +890,7 @@ export const tools: AITool[] = [
   {
     name: 'Character.AI',
     slug: 'character-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=character.ai&sz=128',
     category: 'Chatbots',
     description: 'Platform for AI character chatbots',
     riskScore: 8,
@@ -886,6 +919,7 @@ export const tools: AITool[] = [
   {
     name: 'Synthesia',
     slug: 'synthesia',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=synthesia.io&sz=128',
     category: 'Other',
     description: 'AI video generation with avatars',
     riskScore: 5,
@@ -912,6 +946,7 @@ export const tools: AITool[] = [
   {
     name: 'Descript',
     slug: 'descript',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=descript.com&sz=128',
     category: 'Other',
     description: 'AI-powered audio and video editing',
     riskScore: 4,
@@ -938,6 +973,7 @@ export const tools: AITool[] = [
   {
     name: 'ChatPDF',
     slug: 'chatpdf',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=chatpdf.com&sz=128',
     category: 'Data Analysis',
     description: 'AI tool to chat with PDF documents',
     riskScore: 8,
@@ -966,6 +1002,7 @@ export const tools: AITool[] = [
   {
     name: 'Otter.ai',
     slug: 'otter-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=otter.ai&sz=128',
     category: 'Other',
     description: 'AI meeting transcription and notes',
     riskScore: 5,
@@ -993,6 +1030,7 @@ export const tools: AITool[] = [
   {
     name: 'Zapier AI',
     slug: 'zapier-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=zapier.com&sz=128',
     category: 'Other',
     description: 'AI automation features in Zapier',
     riskScore: 6,
@@ -1020,6 +1058,7 @@ export const tools: AITool[] = [
   {
     name: 'Loom AI',
     slug: 'loom-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=loom.com&sz=128',
     category: 'Other',
     description: 'AI features in Loom video messaging',
     riskScore: 4,
@@ -1046,6 +1085,7 @@ export const tools: AITool[] = [
   {
     name: 'Fireflies.ai',
     slug: 'fireflies-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=fireflies.ai&sz=128',
     category: 'Other',
     description: 'AI meeting assistant and transcription',
     riskScore: 6,
@@ -1073,6 +1113,7 @@ export const tools: AITool[] = [
   {
     name: 'Gamma AI',
     slug: 'gamma-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=gamma.app&sz=128',
     category: 'Writing',
     description: 'AI-powered presentation creation',
     riskScore: 5,
@@ -1098,6 +1139,7 @@ export const tools: AITool[] = [
   {
     name: 'Tome',
     slug: 'tome',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=tome.app&sz=128',
     category: 'Writing',
     description: 'AI storytelling and presentation tool',
     riskScore: 5,
@@ -1123,6 +1165,7 @@ export const tools: AITool[] = [
   {
     name: 'Superhuman AI',
     slug: 'superhuman-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=superhuman.com&sz=128',
     category: 'Writing',
     description: 'AI features in Superhuman email client',
     riskScore: 7,
@@ -1150,6 +1193,7 @@ export const tools: AITool[] = [
   {
     name: 'Mem',
     slug: 'mem',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=mem.ai&sz=128',
     category: 'Writing',
     description: 'AI-powered note-taking and knowledge base',
     riskScore: 5,
@@ -1175,6 +1219,7 @@ export const tools: AITool[] = [
   {
     name: 'Lex',
     slug: 'lex',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=lex.page&sz=128',
     category: 'Writing',
     description: 'AI-powered word processor',
     riskScore: 6,
@@ -1200,6 +1245,7 @@ export const tools: AITool[] = [
   {
     name: 'Beautiful.ai',
     slug: 'beautiful-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=beautiful.ai&sz=128',
     category: 'Writing',
     description: 'AI presentation design platform',
     riskScore: 4,
@@ -1226,6 +1272,7 @@ export const tools: AITool[] = [
   {
     name: 'Cleaned',
     slug: 'cleaned',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=cleaned.com&sz=128',
     category: 'Data Analysis',
     description: 'AI data cleaning and preparation',
     riskScore: 7,
@@ -1251,6 +1298,7 @@ export const tools: AITool[] = [
   {
     name: 'Hex',
     slug: 'hex',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=hex.tech&sz=128',
     category: 'Data Analysis',
     description: 'AI-powered data workspace for analytics',
     riskScore: 4,
@@ -1277,6 +1325,7 @@ export const tools: AITool[] = [
   {
     name: 'Scale AI',
     slug: 'scale-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=scale.com&sz=128',
     category: 'Data Analysis',
     description: 'AI data labeling and training platform',
     riskScore: 5,
@@ -1303,6 +1352,7 @@ export const tools: AITool[] = [
   {
     name: 'Humata AI',
     slug: 'humata-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=humata.ai&sz=128',
     category: 'Data Analysis',
     description: 'AI for document analysis and Q&A',
     riskScore: 7,
@@ -1328,6 +1378,7 @@ export const tools: AITool[] = [
   {
     name: 'Pictory',
     slug: 'pictory',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=pictory.ai&sz=128',
     category: 'Other',
     description: 'AI video creation from text',
     riskScore: 5,
@@ -1353,6 +1404,7 @@ export const tools: AITool[] = [
   {
     name: 'Play.ht',
     slug: 'play-ht',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=play.ht&sz=128',
     category: 'Other',
     description: 'AI text-to-speech and voice generation',
     riskScore: 6,
@@ -1378,6 +1430,7 @@ export const tools: AITool[] = [
   {
     name: 'Replicate',
     slug: 'replicate',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=replicate.com&sz=128',
     category: 'Other',
     description: 'Platform to run open-source AI models',
     riskScore: 5,
@@ -1404,6 +1457,7 @@ export const tools: AITool[] = [
   {
     name: 'Stability AI',
     slug: 'stability-ai',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=stability.ai&sz=128',
     category: 'Image Gen',
     description: 'Company behind Stable Diffusion, offers API',
     riskScore: 4,
@@ -1428,6 +1482,87 @@ export const tools: AITool[] = [
     ],
   },
 ];
+
+// Database row type
+interface AIToolRow {
+  id: number;
+  name: string;
+  slug: string;
+  category: string;
+  description: string;
+  logo_url: string;
+  risk_score: number;
+  data_handling_storage: string;
+  data_handling_retention: string;
+  data_handling_training: string;
+  compliance_soc2: boolean;
+  compliance_gdpr: boolean;
+  compliance_hipaa: boolean;
+  risk_factors: string[];
+  recommendations: string[];
+  created_at: string;
+  updated_at: string;
+}
+
+function mapRowToTool(row: AIToolRow): AITool {
+  return {
+    name: row.name,
+    slug: row.slug,
+    category: row.category as Category,
+    description: row.description,
+    logoUrl: row.logo_url,
+    riskScore: row.risk_score,
+    dataHandling: {
+      storage: row.data_handling_storage,
+      retention: row.data_handling_retention,
+      training: row.data_handling_training,
+    },
+    compliance: {
+      soc2: row.compliance_soc2,
+      gdpr: row.compliance_gdpr,
+      hipaa: row.compliance_hipaa,
+    },
+    riskFactors: row.risk_factors || [],
+    recommendations: row.recommendations || [],
+  };
+}
+
+export async function fetchTools(): Promise<AITool[]> {
+  try {
+    const { supabase } = await import('@/lib/supabase');
+    const { data, error } = await supabase
+      .from('ai_tools')
+      .select('*')
+      .order('name');
+
+    if (error) throw error;
+    if (!data || data.length === 0) return tools;
+
+    return (data as AIToolRow[]).map(mapRowToTool);
+  } catch (e) {
+    console.error('Failed to fetch tools from Supabase:', e);
+    return tools;
+  }
+}
+
+export async function fetchToolBySlug(slug: string): Promise<AITool | undefined> {
+  try {
+    const { supabase } = await import('@/lib/supabase');
+    const { data, error } = await supabase
+      .from('ai_tools')
+      .select('*')
+      .eq('slug', slug)
+      .single();
+
+    if (error) throw error;
+    if (!data) return tools.find(t => t.slug === slug);
+
+    return mapRowToTool(data as AIToolRow);
+  } catch (e) {
+    console.error('Failed to fetch tool from Supabase:', e);
+    return tools.find(t => t.slug === slug);
+  }
+}
 
 export function getRiskLevel(score: number): RiskLevel {
   if (score <= 3) return 'Low';

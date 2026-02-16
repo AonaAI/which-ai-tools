@@ -1,0 +1,5602 @@
+[
+  {
+    "name": "Harness AI",
+    "slug": "harness-ai",
+    "category": "DevOps",
+    "description": "AI-powered software delivery platform that automates CI/CD pipelines and optimizes deployments.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=harness.io&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Pipeline secrets exposure",
+      "Third-party integrations access",
+      "Deployment metadata collection"
+    ],
+    "recommendations": [
+      "Enable RBAC for all pipelines",
+      "Rotate service account tokens regularly",
+      "Audit third-party connectors quarterly"
+    ]
+  },
+  {
+    "name": "Datadog AI",
+    "slug": "datadog-ai",
+    "category": "DevOps",
+    "description": "AI-driven observability platform providing intelligent monitoring, alerting, and log analysis.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=datadoghq.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "15 days default",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Sensitive log ingestion",
+      "Broad infrastructure visibility",
+      "Agent-level host access"
+    ],
+    "recommendations": [
+      "Configure log scrubbing rules",
+      "Restrict API key scopes",
+      "Use sensitive data scanner"
+    ]
+  },
+  {
+    "name": "PagerDuty AIOps",
+    "slug": "pagerduty-aiops",
+    "category": "DevOps",
+    "description": "AI-powered incident management that automatically correlates alerts and reduces noise.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=pagerduty.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "180 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Incident data sensitivity",
+      "On-call schedule exposure",
+      "Integration webhook leaks"
+    ],
+    "recommendations": [
+      "Limit incident visibility by team",
+      "Audit webhook destinations",
+      "Enable SSO enforcement"
+    ]
+  },
+  {
+    "name": "Dynatrace Davis AI",
+    "slug": "dynatrace-davis-ai",
+    "category": "DevOps",
+    "description": "Causal AI engine that automatically detects anomalies and identifies root causes across the stack.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=dynatrace.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "35 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Full-stack code visibility",
+      "Session replay data capture",
+      "Cloud API credential storage"
+    ],
+    "recommendations": [
+      "Enable data privacy settings",
+      "Mask PII in session replays",
+      "Restrict management zones"
+    ]
+  },
+  {
+    "name": "New Relic AI",
+    "slug": "new-relic-ai",
+    "category": "DevOps",
+    "description": "AI-assisted observability platform offering intelligent alerting and automated root cause analysis.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=newrelic.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "8 days default",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Application telemetry exposure",
+      "Custom event data sensitivity",
+      "API key proliferation"
+    ],
+    "recommendations": [
+      "Drop sensitive attributes at ingest",
+      "Use data partition rules",
+      "Enforce least-privilege API keys"
+    ]
+  },
+  {
+    "name": "Splunk AI",
+    "slug": "splunk-ai",
+    "category": "DevOps",
+    "description": "AI and ML-powered platform for searching, monitoring, and analyzing machine-generated data.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=splunk.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "Customer-managed or cloud",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Broad data ingestion scope",
+      "Forwarder credential management",
+      "Search head cluster access"
+    ],
+    "recommendations": [
+      "Implement index-level RBAC",
+      "Encrypt data in transit and at rest",
+      "Review saved searches for data leaks"
+    ]
+  },
+  {
+    "name": "GitLab Duo",
+    "slug": "gitlab-duo",
+    "category": "DevOps",
+    "description": "AI-powered coding assistant integrated into GitLab for code suggestions, reviews, and vulnerability detection.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=gitlab.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Transient",
+      "training": "No on self-managed"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Source code sent to AI models",
+      "Merge request data exposure",
+      "Proprietary code training risk"
+    ],
+    "recommendations": [
+      "Use self-managed for sensitive repos",
+      "Disable AI features for classified projects",
+      "Review data processing agreements"
+    ]
+  },
+  {
+    "name": "GitHub Copilot",
+    "slug": "github-copilot",
+    "category": "DevOps",
+    "description": "AI pair programmer that suggests code completions and entire functions in your IDE.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=github.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Transient for business",
+      "training": "No for business tier"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Code snippet telemetry",
+      "Proprietary code exposure",
+      "Suggested code license risks"
+    ],
+    "recommendations": [
+      "Enable Copilot for Business only",
+      "Block suggestions matching public code",
+      "Audit telemetry settings"
+    ]
+  },
+  {
+    "name": "CircleCI AI",
+    "slug": "circleci-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced continuous integration platform that optimizes build times and predicts failures.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=circleci.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Build environment secrets",
+      "Docker layer caching data",
+      "SSH debug access"
+    ],
+    "recommendations": [
+      "Use contexts for secret management",
+      "Restrict SSH debug to admins",
+      "Rotate environment variables regularly"
+    ]
+  },
+  {
+    "name": "Buildkite AI",
+    "slug": "buildkite-ai",
+    "category": "DevOps",
+    "description": "AI-powered CI/CD platform providing intelligent test splitting and pipeline optimization.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=buildkite.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Agent-level infrastructure access",
+      "Build artifact storage",
+      "Pipeline YAML injection"
+    ],
+    "recommendations": [
+      "Run agents in isolated environments",
+      "Sign pipeline uploads",
+      "Restrict agent queue access"
+    ]
+  },
+  {
+    "name": "Terraform AI by HashiCorp",
+    "slug": "terraform-ai-hashicorp",
+    "category": "DevOps",
+    "description": "AI-assisted infrastructure as code tool that generates and validates Terraform configurations.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=hashicorp.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "State file dependent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "State file secrets exposure",
+      "Infrastructure drift detection data",
+      "Cloud provider credentials"
+    ],
+    "recommendations": [
+      "Encrypt state files at rest",
+      "Use remote state with locking",
+      "Never commit tfvars with secrets"
+    ]
+  },
+  {
+    "name": "Pulumi AI",
+    "slug": "pulumi-ai",
+    "category": "DevOps",
+    "description": "AI-powered infrastructure as code platform that generates cloud infrastructure programs from natural language.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=pulumi.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Stack state persistent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cloud credentials in state",
+      "Generated code quality risks",
+      "Stack export data sensitivity"
+    ],
+    "recommendations": [
+      "Use Pulumi ESC for secrets",
+      "Review AI-generated code before apply",
+      "Enable state encryption"
+    ]
+  },
+  {
+    "name": "Ansible Lightspeed",
+    "slug": "ansible-lightspeed",
+    "category": "DevOps",
+    "description": "AI-powered content creation tool for Ansible that generates playbooks from natural language prompts.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=ansible.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Transient",
+      "training": "IBM watsonx model"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Playbook content sent to cloud",
+      "Infrastructure topology exposure",
+      "Credential references in tasks"
+    ],
+    "recommendations": [
+      "Use Ansible Vault for secrets",
+      "Review generated playbooks manually",
+      "Restrict to approved collections"
+    ]
+  },
+  {
+    "name": "Kubiya AI",
+    "slug": "kubiya-ai",
+    "category": "DevOps",
+    "description": "AI-powered DevOps assistant that automates operational workflows through conversational interfaces.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=kubiya.ai&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Broad infrastructure action access",
+      "Conversational command injection",
+      "Integration credential scope"
+    ],
+    "recommendations": [
+      "Define strict action permissions",
+      "Audit conversation logs",
+      "Limit integration scopes"
+    ]
+  },
+  {
+    "name": "Komodor AI",
+    "slug": "komodor-ai",
+    "category": "DevOps",
+    "description": "AI-driven Kubernetes troubleshooting platform that automates root cause analysis for cluster issues.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=komodor.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "14 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Kubernetes API access breadth",
+      "Pod log data collection",
+      "Cluster topology mapping"
+    ],
+    "recommendations": [
+      "Use read-only RBAC for agents",
+      "Filter sensitive log patterns",
+      "Restrict namespace visibility"
+    ]
+  },
+  {
+    "name": "Spot.io by NetApp",
+    "slug": "spot-io-netapp",
+    "category": "DevOps",
+    "description": "AI-powered cloud infrastructure optimization that automatically manages compute resources and costs.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=spot.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "60 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cloud account cross-access",
+      "Instance metadata exposure",
+      "Cost data sensitivity"
+    ],
+    "recommendations": [
+      "Use least-privilege IAM roles",
+      "Review auto-scaling policies",
+      "Monitor cost anomalies"
+    ]
+  },
+  {
+    "name": "Opsani AI",
+    "slug": "opsani-ai",
+    "category": "DevOps",
+    "description": "AI-driven continuous optimization engine that automatically tunes application performance and cost.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=opsani.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": false,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Application config modification",
+      "Performance metric collection",
+      "Resource allocation control"
+    ],
+    "recommendations": [
+      "Set guardrails on tuning ranges",
+      "Monitor optimization changes",
+      "Require approval for large changes"
+    ]
+  },
+  {
+    "name": "Moogsoft AI",
+    "slug": "moogsoft-ai",
+    "category": "DevOps",
+    "description": "AI-powered observability platform that reduces alert noise and correlates incidents automatically.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=moogsoft.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Alert data aggregation",
+      "Incident correlation patterns",
+      "Integration webhook exposure"
+    ],
+    "recommendations": [
+      "Restrict data source connections",
+      "Audit correlation rules",
+      "Encrypt webhook payloads"
+    ]
+  },
+  {
+    "name": "BigPanda AIOps",
+    "slug": "bigpanda-aiops",
+    "category": "DevOps",
+    "description": "AI-powered event correlation and automation platform for IT operations management.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=bigpanda.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cross-tool alert aggregation",
+      "Topology data collection",
+      "Runbook automation access"
+    ],
+    "recommendations": [
+      "Limit integration data scope",
+      "Review automated actions",
+      "Enforce MFA for console"
+    ]
+  },
+  {
+    "name": "Shoreline AI",
+    "slug": "shoreline-ai",
+    "category": "DevOps",
+    "description": "AI-powered incident automation platform that enables on-call engineers to debug and repair at scale.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=shoreline.io&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Host-level command execution",
+      "Remediation script access",
+      "Agent kernel-level data"
+    ],
+    "recommendations": [
+      "Restrict Op execution permissions",
+      "Audit remediation runbooks",
+      "Use approval workflows for actions"
+    ]
+  },
+  {
+    "name": "Env0 AI",
+    "slug": "env0-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced environment-as-a-service platform for managing Terraform and infrastructure deployments.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=env0.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "60 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cloud credentials management",
+      "State file access",
+      "Cost estimation data"
+    ],
+    "recommendations": [
+      "Use OIDC for cloud providers",
+      "Enable plan approval policies",
+      "Restrict environment creation"
+    ]
+  },
+  {
+    "name": "Spacelift AI",
+    "slug": "spacelift-ai",
+    "category": "DevOps",
+    "description": "AI-assisted infrastructure management platform for orchestrating Terraform, Pulumi, and CloudFormation.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=spacelift.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Infrastructure state access",
+      "VCS integration scope",
+      "Worker pool credentials"
+    ],
+    "recommendations": [
+      "Use private workers for sensitive stacks",
+      "Implement OPA policies",
+      "Restrict space-level access"
+    ]
+  },
+  {
+    "name": "Firefly AI",
+    "slug": "firefly-ai-devops",
+    "category": "DevOps",
+    "description": "AI-powered cloud asset management that discovers, codifies, and manages infrastructure as code.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=firefly.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Full cloud inventory access",
+      "Cross-account scanning",
+      "Drift detection data"
+    ],
+    "recommendations": [
+      "Use read-only cloud roles",
+      "Scope scanning to specific accounts",
+      "Review codification outputs"
+    ]
+  },
+  {
+    "name": "Coder AI",
+    "slug": "coder-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced cloud development environment platform that provisions secure remote workspaces.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=coder.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Self-hosted or cloud",
+      "retention": "Session-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Workspace credential access",
+      "Source code environment exposure",
+      "Template privilege escalation"
+    ],
+    "recommendations": [
+      "Use ephemeral workspaces",
+      "Enforce template RBAC",
+      "Audit workspace network policies"
+    ]
+  },
+  {
+    "name": "Octopus Deploy AI",
+    "slug": "octopus-deploy-ai",
+    "category": "DevOps",
+    "description": "AI-assisted deployment automation platform that streamlines release management across environments.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=octopus.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and AU servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Deployment target credentials",
+      "Variable set secrets",
+      "Tentacle agent access"
+    ],
+    "recommendations": [
+      "Use worker pools for isolation",
+      "Scope variables to environments",
+      "Rotate deployment targets regularly"
+    ]
+  },
+  {
+    "name": "Launchdarkly AI",
+    "slug": "launchdarkly-ai",
+    "category": "DevOps",
+    "description": "AI-powered feature management platform that uses ML to optimize feature flag targeting and rollouts.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=launchdarkly.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "60 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "User targeting data collection",
+      "Feature flag configuration leaks",
+      "SDK key exposure"
+    ],
+    "recommendations": [
+      "Use relay proxy for sensitive environments",
+      "Rotate SDK keys periodically",
+      "Limit targeting rule complexity"
+    ]
+  },
+  {
+    "name": "Flagsmith AI",
+    "slug": "flagsmith-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced open-source feature flag platform with intelligent targeting and A/B testing capabilities.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=flagsmith.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US or self-hosted",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "User identity trait storage",
+      "Environment key exposure",
+      "Segment rule data leaks"
+    ],
+    "recommendations": [
+      "Self-host for maximum control",
+      "Hash user identifiers",
+      "Use environment-level permissions"
+    ]
+  },
+  {
+    "name": "LinearB AI",
+    "slug": "linearb-ai",
+    "category": "DevOps",
+    "description": "AI-driven software delivery intelligence platform that optimizes developer workflows and engineering metrics.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=linearb.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "12 months",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Git activity tracking",
+      "Developer productivity profiling",
+      "PR content analysis"
+    ],
+    "recommendations": [
+      "Anonymize individual metrics",
+      "Restrict dashboard access by role",
+      "Review VCS permission scopes"
+    ]
+  },
+  {
+    "name": "Jellyfish AI",
+    "slug": "jellyfish-ai",
+    "category": "DevOps",
+    "description": "AI-powered engineering management platform that analyzes engineering investments and team performance.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=jellyfish.co&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "24 months",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Engineering activity surveillance",
+      "Jira and Git data correlation",
+      "Individual performance tracking"
+    ],
+    "recommendations": [
+      "Use team-level aggregations only",
+      "Limit historical data retention",
+      "Communicate data usage to teams"
+    ]
+  },
+  {
+    "name": "Sleuth AI",
+    "slug": "sleuth-ai",
+    "category": "DevOps",
+    "description": "AI-powered DORA metrics tracker that measures deployment frequency, lead time, and change failure rate.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=sleuth.io&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "12 months",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Deployment metadata collection",
+      "VCS commit analysis",
+      "Incident correlation data"
+    ],
+    "recommendations": [
+      "Scope to non-sensitive repositories",
+      "Review integration permissions",
+      "Use SSO for access control"
+    ]
+  },
+  {
+    "name": "Cortex.io",
+    "slug": "cortex-io",
+    "category": "DevOps",
+    "description": "AI-powered internal developer portal that scores service maturity and drives engineering standards.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cortex.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Service catalog data breadth",
+      "Integration credential aggregation",
+      "Scorecard data sensitivity"
+    ],
+    "recommendations": [
+      "Limit catalog entity visibility",
+      "Audit integration connections",
+      "Use teams for access scoping"
+    ]
+  },
+  {
+    "name": "Port.io",
+    "slug": "port-io",
+    "category": "DevOps",
+    "description": "AI-enhanced internal developer portal for building self-service experiences and tracking software catalog.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=getport.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Broad integration data access",
+      "Self-service action permissions",
+      "Blueprint data model exposure"
+    ],
+    "recommendations": [
+      "Restrict self-service action scopes",
+      "Use RBAC for blueprints",
+      "Audit action audit logs"
+    ]
+  },
+  {
+    "name": "OpsLevel AI",
+    "slug": "opslevel-ai",
+    "category": "DevOps",
+    "description": "AI-powered service ownership platform that automates catalog management and maturity tracking.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=opslevel.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Service dependency mapping",
+      "Check result data",
+      "Integration scope breadth"
+    ],
+    "recommendations": [
+      "Review rubric check access",
+      "Limit filter visibility",
+      "Use SSO with SCIM"
+    ]
+  },
+  {
+    "name": "Backstage AI Plugins",
+    "slug": "backstage-ai-plugins",
+    "category": "DevOps",
+    "description": "AI plugin ecosystem for Spotify Backstage developer portal enabling intelligent service catalog features.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=backstage.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Plugin supply chain risk",
+      "Catalog entity data access",
+      "Proxy endpoint exposure"
+    ],
+    "recommendations": [
+      "Vet all plugins before install",
+      "Restrict proxy configurations",
+      "Audit entity provider access"
+    ]
+  },
+  {
+    "name": "Argo AI Workflows",
+    "slug": "argo-ai-workflows",
+    "category": "DevOps",
+    "description": "AI-enhanced Kubernetes-native workflow engine for orchestrating parallel jobs and ML pipelines.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=argoproj.github.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Kubernetes RBAC scope",
+      "Workflow secret injection",
+      "Artifact storage access"
+    ],
+    "recommendations": [
+      "Use service accounts per workflow",
+      "Encrypt artifact repositories",
+      "Enable audit logging"
+    ]
+  },
+  {
+    "name": "Flux AI",
+    "slug": "flux-ai-gitops",
+    "category": "DevOps",
+    "description": "AI-assisted GitOps toolkit for Kubernetes that automates deployment reconciliation and drift detection.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=fluxcd.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Git-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Git repository credential storage",
+      "Cluster-wide reconciliation",
+      "Image automation data"
+    ],
+    "recommendations": [
+      "Scope Flux to namespaces",
+      "Use sealed secrets",
+      "Enable notification alerts"
+    ]
+  },
+  {
+    "name": "Crossplane AI",
+    "slug": "crossplane-ai",
+    "category": "DevOps",
+    "description": "AI-powered Kubernetes-native control plane for provisioning and managing cloud infrastructure.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=crossplane.io&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "etcd-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cloud provider credential storage",
+      "CRD-based infrastructure control",
+      "Composition security gaps"
+    ],
+    "recommendations": [
+      "Encrypt provider credentials",
+      "Use RBAC for XRDs",
+      "Audit claim consumption"
+    ]
+  },
+  {
+    "name": "Keploy AI",
+    "slug": "keploy-ai",
+    "category": "DevOps",
+    "description": "AI-powered API test generation tool that records and replays application traffic for regression testing.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=keploy.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Local or cloud",
+      "retention": "Test suite lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Production traffic recording",
+      "PII in test fixtures",
+      "API credential capture"
+    ],
+    "recommendations": [
+      "Sanitize recorded test data",
+      "Mask sensitive headers",
+      "Use in staging only"
+    ]
+  },
+  {
+    "name": "Testsigma AI",
+    "slug": "testsigma-ai",
+    "category": "DevOps",
+    "description": "AI-driven test automation platform that generates and maintains tests using natural language processing.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=testsigma.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Test environment credentials",
+      "Application data in screenshots",
+      "NLP-processed test content"
+    ],
+    "recommendations": [
+      "Use data profiles for masking",
+      "Restrict test environment access",
+      "Review AI-generated assertions"
+    ]
+  },
+  {
+    "name": "Mabl AI",
+    "slug": "mabl-ai",
+    "category": "DevOps",
+    "description": "AI-powered test automation platform that uses ML to create, run, and maintain end-to-end tests.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=mabl.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Application UI data capture",
+      "Test credential management",
+      "Screenshot PII exposure"
+    ],
+    "recommendations": [
+      "Use data tables for credentials",
+      "Enable screenshot redaction",
+      "Limit test environment scope"
+    ]
+  },
+  {
+    "name": "Testim AI",
+    "slug": "testim-ai",
+    "category": "DevOps",
+    "description": "AI-powered test authoring and execution platform that uses ML for smart locators and self-healing tests.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=testim.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "60 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "DOM snapshot collection",
+      "Test data with PII",
+      "Cloud execution grid access"
+    ],
+    "recommendations": [
+      "Sanitize test data inputs",
+      "Restrict grid access",
+      "Review smart locator accuracy"
+    ]
+  },
+  {
+    "name": "Snyk AI",
+    "slug": "snyk-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced developer security platform that finds and fixes vulnerabilities in code and dependencies.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=snyk.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Source code analysis access",
+      "Dependency tree exposure",
+      "Container image scanning data"
+    ],
+    "recommendations": [
+      "Use Snyk broker for private repos",
+      "Limit org-level permissions",
+      "Review fix PR suggestions"
+    ]
+  },
+  {
+    "name": "Sourcegraph Cody",
+    "slug": "sourcegraph-cody",
+    "category": "DevOps",
+    "description": "AI coding assistant that uses your entire codebase as context for intelligent code completions and answers.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=sourcegraph.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers or self-hosted",
+      "retention": "Transient",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Full codebase indexing",
+      "Code sent to LLM providers",
+      "Embeddings storage sensitivity"
+    ],
+    "recommendations": [
+      "Self-host for sensitive code",
+      "Configure context filtering",
+      "Audit LLM provider agreements"
+    ]
+  },
+  {
+    "name": "Tabnine",
+    "slug": "tabnine",
+    "category": "DevOps",
+    "description": "AI code completion tool that runs locally or in the cloud to suggest whole-line and function completions.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=tabnine.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Self-hosted option",
+      "retention": "Transient in cloud",
+      "training": "No for enterprise"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Code telemetry collection",
+      "Model training on code",
+      "IDE plugin permissions"
+    ],
+    "recommendations": [
+      "Use self-hosted model",
+      "Disable telemetry sharing",
+      "Restrict to enterprise tier"
+    ]
+  },
+  {
+    "name": "Amazon CodeWhisperer",
+    "slug": "amazon-codewhisperer",
+    "category": "DevOps",
+    "description": "AI-powered code generator by AWS that provides real-time code suggestions and security scans.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Transient for professional",
+      "training": "No for professional tier"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Code content telemetry",
+      "Reference tracker data",
+      "AWS service integration scope"
+    ],
+    "recommendations": [
+      "Use professional tier only",
+      "Enable reference tracker",
+      "Review security scan findings"
+    ]
+  },
+  {
+    "name": "Replit AI",
+    "slug": "replit-ai",
+    "category": "DevOps",
+    "description": "AI-powered cloud IDE that provides code generation, debugging assistance, and collaborative development.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=replit.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Persistent",
+      "training": "Community content may train"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Code stored in cloud",
+      "Shared repl exposure",
+      "AI model training on code"
+    ],
+    "recommendations": [
+      "Use Teams for private repls",
+      "Disable public sharing",
+      "Review AI data usage policy"
+    ]
+  },
+  {
+    "name": "Pieces for Developers",
+    "slug": "pieces-for-developers",
+    "category": "DevOps",
+    "description": "AI-powered developer productivity tool that captures, enriches, and reuses code snippets intelligently.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=pieces.app&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "Local-first",
+      "retention": "User-controlled",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Clipboard capture scope",
+      "Snippet context sensitivity",
+      "Cloud sync exposure"
+    ],
+    "recommendations": [
+      "Use offline mode for sensitive code",
+      "Review snippet sharing settings",
+      "Disable cloud backup if needed"
+    ]
+  },
+  {
+    "name": "Qodo AI",
+    "slug": "qodo-ai",
+    "category": "DevOps",
+    "description": "AI-powered code integrity platform that generates meaningful tests and reviews pull requests automatically.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=qodo.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Transient",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Code diff analysis",
+      "Test generation data exposure",
+      "PR content sent to cloud"
+    ],
+    "recommendations": [
+      "Use self-hosted for private repos",
+      "Review generated tests",
+      "Limit repository access scope"
+    ]
+  },
+  {
+    "name": "Codacy AI",
+    "slug": "codacy-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced automated code quality platform that reviews code and tracks engineering standards.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=codacy.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Source code scanning access",
+      "Quality metric data",
+      "VCS integration permissions"
+    ],
+    "recommendations": [
+      "Use SSH keys for VCS",
+      "Review tool configurations",
+      "Restrict organization access"
+    ]
+  },
+  {
+    "name": "DeepSource AI",
+    "slug": "deepsource-ai",
+    "category": "DevOps",
+    "description": "AI-powered static analysis platform that automatically detects and fixes code quality and security issues.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=deepsource.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Analysis results persistent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Repository code scanning",
+      "Autofix code modification",
+      "Analysis data retention"
+    ],
+    "recommendations": [
+      "Review autofix changes",
+      "Scope to specific repositories",
+      "Audit integration permissions"
+    ]
+  },
+  {
+    "name": "Wiz AI",
+    "slug": "wiz-ai-devops",
+    "category": "DevOps",
+    "description": "AI-powered cloud security platform integrated into DevOps workflows for shift-left vulnerability management.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=wiz.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Full cloud environment scanning",
+      "Agentless snapshot access",
+      "Cross-account role permissions"
+    ],
+    "recommendations": [
+      "Use least-privilege scanner roles",
+      "Segment by project",
+      "Review finding severity thresholds"
+    ]
+  },
+  {
+    "name": "Doppler AI",
+    "slug": "doppler-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced secrets management platform that syncs environment variables across services and environments.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=doppler.com&sz=128",
+    "riskScore": 7,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Version history persistent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Centralized secrets storage",
+      "Integration sync breadth",
+      "Service token proliferation"
+    ],
+    "recommendations": [
+      "Enable IP allowlisting",
+      "Use service tokens not personal",
+      "Rotate secrets on schedule"
+    ]
+  },
+  {
+    "name": "Infracost AI",
+    "slug": "infracost-ai",
+    "category": "DevOps",
+    "description": "AI-powered cloud cost estimation tool that predicts infrastructure costs from Terraform code changes.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=infracost.io&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Infrastructure plan exposure",
+      "Resource configuration data",
+      "Cost data sensitivity"
+    ],
+    "recommendations": [
+      "Self-host for sensitive plans",
+      "Restrict CI integration scope",
+      "Review cost policy rules"
+    ]
+  },
+  {
+    "name": "Kubecost AI",
+    "slug": "kubecost-ai",
+    "category": "DevOps",
+    "description": "AI-powered Kubernetes cost monitoring platform that provides allocation insights and optimization recommendations.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=kubecost.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Self-hosted or cloud",
+      "retention": "15 days default",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cluster resource visibility",
+      "Namespace cost allocation",
+      "Cloud billing API access"
+    ],
+    "recommendations": [
+      "Use self-hosted for sensitive clusters",
+      "Restrict dashboard access",
+      "Review savings recommendations"
+    ]
+  },
+  {
+    "name": "Cast AI",
+    "slug": "cast-ai",
+    "category": "DevOps",
+    "description": "AI-powered Kubernetes cost optimization platform that automates cluster right-sizing and spot instance management.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cast.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cluster modification permissions",
+      "Node lifecycle control",
+      "Cloud provider API access"
+    ],
+    "recommendations": [
+      "Start with read-only mode",
+      "Set resource guardrails",
+      "Monitor autoscaler decisions"
+    ]
+  },
+  {
+    "name": "Vantage AI",
+    "slug": "vantage-ai",
+    "category": "DevOps",
+    "description": "AI-powered cloud cost transparency platform that provides automated cost reports and optimization insights.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=vantage.sh&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "12 months",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cloud billing data access",
+      "Cost allocation metadata",
+      "Cross-provider data aggregation"
+    ],
+    "recommendations": [
+      "Use read-only billing roles",
+      "Segment cost by team",
+      "Review autopilot suggestions"
+    ]
+  },
+  {
+    "name": "Rafay AI",
+    "slug": "rafay-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced Kubernetes operations platform for automated cluster lifecycle management and governance.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=rafay.co&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Multi-cluster admin access",
+      "GitOps pipeline control",
+      "Blueprint enforcement scope"
+    ],
+    "recommendations": [
+      "Use namespace isolation",
+      "Enforce OPA policies",
+      "Audit cluster access logs"
+    ]
+  },
+  {
+    "name": "Upbound AI",
+    "slug": "upbound-ai",
+    "category": "DevOps",
+    "description": "AI-powered universal cloud API platform built on Crossplane for managed control plane infrastructure.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=upbound.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cloud provider credentials",
+      "Control plane API access",
+      "Composition function security"
+    ],
+    "recommendations": [
+      "Encrypt provider configs",
+      "Use team-scoped control planes",
+      "Audit composition functions"
+    ]
+  },
+  {
+    "name": "Codefresh AI",
+    "slug": "codefresh-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced GitOps and CI/CD platform built on Argo for Kubernetes-native software delivery.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=codefresh.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Pipeline secret management",
+      "Registry credential storage",
+      "GitOps repository access"
+    ],
+    "recommendations": [
+      "Use external secret stores",
+      "Restrict runtime access",
+      "Enable pipeline audit logging"
+    ]
+  },
+  {
+    "name": "Humanitec AI",
+    "slug": "humanitec-ai",
+    "category": "DevOps",
+    "description": "AI-powered platform orchestrator that automates infrastructure configuration and developer self-service.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=humanitec.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Infrastructure resource provisioning",
+      "Score file interpretation",
+      "Driver credential access"
+    ],
+    "recommendations": [
+      "Audit resource definitions",
+      "Use environment-level RBAC",
+      "Review driver configurations"
+    ]
+  },
+  {
+    "name": "Massdriver AI",
+    "slug": "massdriver-ai",
+    "category": "DevOps",
+    "description": "AI-driven internal developer platform that packages infrastructure into reusable, policy-compliant bundles.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=massdriver.cloud&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Bundle credential injection",
+      "Cloud service provisioning",
+      "Artifact publish scope"
+    ],
+    "recommendations": [
+      "Review bundle permissions",
+      "Use private artifact registries",
+      "Enforce naming conventions"
+    ]
+  },
+  {
+    "name": "Zeet AI",
+    "slug": "zeet-ai",
+    "category": "DevOps",
+    "description": "AI-powered cloud deployment platform that optimizes infrastructure for any cloud provider automatically.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=zeet.co&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Multi-cloud credential management",
+      "Deployment configuration access",
+      "Auto-scaling decisions"
+    ],
+    "recommendations": [
+      "Limit cloud account connections",
+      "Review deployment configs",
+      "Set cost alerts"
+    ]
+  },
+  {
+    "name": "Railway AI",
+    "slug": "railway-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced cloud application platform that simplifies deployment and infrastructure management for developers.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=railway.app&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Service lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Environment variable exposure",
+      "Build log data",
+      "Database credential management"
+    ],
+    "recommendations": [
+      "Use private networking",
+      "Rotate database credentials",
+      "Review build log visibility"
+    ]
+  },
+  {
+    "name": "Render AI",
+    "slug": "render-ai",
+    "category": "DevOps",
+    "description": "AI-powered cloud platform that automates deployment, scaling, and infrastructure management for web services.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=render.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Service lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Auto-deploy from VCS",
+      "Environment group sharing",
+      "Persistent disk data"
+    ],
+    "recommendations": [
+      "Restrict auto-deploy branches",
+      "Use environment groups carefully",
+      "Enable DDoS protection"
+    ]
+  },
+  {
+    "name": "Northflank AI",
+    "slug": "northflank-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced developer platform for deploying and managing containerized services and databases.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=northflank.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Service lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Container registry credentials",
+      "Database provisioning access",
+      "Job scheduling permissions"
+    ],
+    "recommendations": [
+      "Use team-level access controls",
+      "Encrypt database connections",
+      "Review job configurations"
+    ]
+  },
+  {
+    "name": "Gitpod AI",
+    "slug": "gitpod-ai",
+    "category": "DevOps",
+    "description": "AI-powered cloud development environment that provides automated, pre-configured coding workspaces.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=gitpod.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "EU servers",
+      "retention": "Workspace lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Source code in cloud workspaces",
+      "Environment variable injection",
+      "Extension marketplace risks"
+    ],
+    "recommendations": [
+      "Use dedicated clusters",
+      "Restrict workspace sharing",
+      "Audit installed extensions"
+    ]
+  },
+  {
+    "name": "DevZero AI",
+    "slug": "devzero-ai",
+    "category": "DevOps",
+    "description": "AI-powered development environment platform that replicates production infrastructure for local development.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=devzero.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Environment lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Production environment replication",
+      "Credential forwarding",
+      "Network access scope"
+    ],
+    "recommendations": [
+      "Sanitize replicated data",
+      "Use credential proxying",
+      "Limit network policies"
+    ]
+  },
+  {
+    "name": "Diagrid AI",
+    "slug": "diagrid-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced managed Dapr platform that simplifies building distributed applications with built-in APIs.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=diagrid.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Service-to-service communication",
+      "State store credentials",
+      "Pub/sub message data"
+    ],
+    "recommendations": [
+      "Encrypt component secrets",
+      "Use mTLS for services",
+      "Audit API access policies"
+    ]
+  },
+  {
+    "name": "Amplication AI",
+    "slug": "amplication-ai",
+    "category": "DevOps",
+    "description": "AI-powered backend development platform that generates production-ready services from data models.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=amplication.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Project lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Generated code quality",
+      "Data model exposure",
+      "Plugin security risks"
+    ],
+    "recommendations": [
+      "Review generated code thoroughly",
+      "Audit plugin dependencies",
+      "Use private Git integration"
+    ]
+  },
+  {
+    "name": "Airplane AI",
+    "slug": "airplane-ai",
+    "category": "DevOps",
+    "description": "AI-powered internal tooling platform that builds admin panels, workflows, and scheduled tasks quickly.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=airplane.dev&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Database query access",
+      "Task execution permissions",
+      "Internal API exposure"
+    ],
+    "recommendations": [
+      "Use parameterized queries",
+      "Restrict task permissions by role",
+      "Enable approval workflows"
+    ]
+  },
+  {
+    "name": "Windmill AI",
+    "slug": "windmill-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced open-source developer platform for building internal tools, workflows, and scripts.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=windmill.dev&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Self-hosted or cloud",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Script execution scope",
+      "Variable and secret storage",
+      "Webhook endpoint exposure"
+    ],
+    "recommendations": [
+      "Self-host for sensitive data",
+      "Use folders for access control",
+      "Audit script permissions"
+    ]
+  },
+  {
+    "name": "Speakeasy AI",
+    "slug": "speakeasy-ai",
+    "category": "DevOps",
+    "description": "AI-powered API developer experience platform that generates SDKs and documentation from OpenAPI specs.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=speakeasy.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Spec lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "API specification exposure",
+      "SDK generation data",
+      "Authentication scheme details"
+    ],
+    "recommendations": [
+      "Redact sensitive API paths",
+      "Review generated SDK code",
+      "Use private spec repositories"
+    ]
+  },
+  {
+    "name": "Rely.io AI",
+    "slug": "rely-io-ai",
+    "category": "DevOps",
+    "description": "AI-driven internal developer portal that automates service catalog management and software quality tracking.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=rely.io&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Integration data aggregation",
+      "Service metadata exposure",
+      "Initiative tracking data"
+    ],
+    "recommendations": [
+      "Scope integrations per team",
+      "Review entity permissions",
+      "Use SSO enforcement"
+    ]
+  },
+  {
+    "name": "Kosli AI",
+    "slug": "kosli-ai",
+    "category": "DevOps",
+    "description": "AI-powered DevOps change management platform that tracks environment changes and ensures compliance.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=kosli.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "EU servers",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Deployment attestation data",
+      "Artifact provenance tracking",
+      "Environment snapshot data"
+    ],
+    "recommendations": [
+      "Define strict flow policies",
+      "Audit attestation sources",
+      "Restrict environment access"
+    ]
+  },
+  {
+    "name": "Atmos AI",
+    "slug": "atmos-ai-cloudposse",
+    "category": "DevOps",
+    "description": "AI-enhanced Terraform framework by Cloud Posse for managing complex multi-account cloud architectures.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cloudposse.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Git-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Multi-account credential scope",
+      "Stack configuration complexity",
+      "Component dependency chains"
+    ],
+    "recommendations": [
+      "Use OIDC for AWS auth",
+      "Review stack dependencies",
+      "Validate component versions"
+    ]
+  },
+  {
+    "name": "Nixpacks AI",
+    "slug": "nixpacks-ai",
+    "category": "DevOps",
+    "description": "AI-powered build system that automatically detects and packages applications into container images.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=nixpacks.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "Local build",
+      "retention": "Image lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Build environment exposure",
+      "Dependency resolution risks",
+      "Base image vulnerabilities"
+    ],
+    "recommendations": [
+      "Scan generated images",
+      "Pin dependency versions",
+      "Use minimal base images"
+    ]
+  },
+  {
+    "name": "Depot AI",
+    "slug": "depot-ai",
+    "category": "DevOps",
+    "description": "AI-accelerated container build service that speeds up Docker builds with intelligent caching.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=depot.dev&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Cache-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Build layer caching data",
+      "Registry credential handling",
+      "Build context sensitivity"
+    ],
+    "recommendations": [
+      "Use project-level isolation",
+      "Rotate registry tokens",
+      "Review cache policies"
+    ]
+  },
+  {
+    "name": "Dagger AI",
+    "slug": "dagger-ai",
+    "category": "DevOps",
+    "description": "AI-powered programmable CI/CD engine that uses containers to encapsulate and share build pipelines.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=dagger.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Local or cloud",
+      "retention": "Cache lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Container execution scope",
+      "Secret passing in pipelines",
+      "Module supply chain risk"
+    ],
+    "recommendations": [
+      "Vet community modules",
+      "Use secret mount patterns",
+      "Restrict container capabilities"
+    ]
+  },
+  {
+    "name": "Earthly AI",
+    "slug": "earthly-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced build automation tool that combines Dockerfiles and Makefiles for reproducible CI builds.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=earthly.dev&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "Local or satellite",
+      "retention": "Cache lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Build secret injection",
+      "Satellite shared cache",
+      "Remote execution access"
+    ],
+    "recommendations": [
+      "Use inline secrets only",
+      "Isolate satellite instances",
+      "Review Earthfile dependencies"
+    ]
+  },
+  {
+    "name": "Devtron AI",
+    "slug": "devtron-ai",
+    "category": "DevOps",
+    "description": "AI-powered Kubernetes application lifecycle management platform with built-in CI/CD and GitOps.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=devtron.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cluster admin access",
+      "Chart store credentials",
+      "Global configuration exposure"
+    ],
+    "recommendations": [
+      "Use super-admin sparingly",
+      "Restrict cluster connections",
+      "Audit global configmaps"
+    ]
+  },
+  {
+    "name": "Meshery AI",
+    "slug": "meshery-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced cloud-native management platform for designing and operating Kubernetes infrastructure.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=meshery.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Design lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Multi-cluster access",
+      "Service mesh configuration",
+      "Design pattern exposure"
+    ],
+    "recommendations": [
+      "Restrict cluster connections",
+      "Review mesh policies",
+      "Use remote provider auth"
+    ]
+  },
+  {
+    "name": "Cycloid AI",
+    "slug": "cycloid-ai",
+    "category": "DevOps",
+    "description": "AI-powered hybrid cloud DevOps platform with FinOps, GreenOps, and infrastructure management capabilities.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cycloid.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Multi-cloud credential storage",
+      "Stack template access",
+      "Cost data aggregation"
+    ],
+    "recommendations": [
+      "Use credential plugins",
+      "Review stack permissions",
+      "Segment by project"
+    ]
+  },
+  {
+    "name": "Portainer AI",
+    "slug": "portainer-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced container management platform for deploying and managing Docker and Kubernetes environments.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=portainer.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Persistent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Docker socket access",
+      "Container exec permissions",
+      "Registry credential storage"
+    ],
+    "recommendations": [
+      "Restrict Docker socket exposure",
+      "Use RBAC for endpoints",
+      "Enable edge agent encryption"
+    ]
+  },
+  {
+    "name": "Lens AI",
+    "slug": "lens-ai",
+    "category": "DevOps",
+    "description": "AI-powered Kubernetes IDE that provides intelligent cluster management and troubleshooting assistance.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=k8slens.dev&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Local with cloud sync",
+      "retention": "Kubeconfig lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Kubeconfig credential access",
+      "Cluster telemetry collection",
+      "Extension security risks"
+    ],
+    "recommendations": [
+      "Audit kubeconfig permissions",
+      "Disable telemetry if needed",
+      "Vet marketplace extensions"
+    ]
+  },
+  {
+    "name": "Sysdig AI",
+    "slug": "sysdig-ai",
+    "category": "DevOps",
+    "description": "AI-driven cloud-native security and monitoring platform with runtime threat detection for containers.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=sysdig.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Kernel-level system call capture",
+      "Container runtime visibility",
+      "Compliance scan data"
+    ],
+    "recommendations": [
+      "Tune Falco rules",
+      "Restrict capture scope",
+      "Review posture findings"
+    ]
+  },
+  {
+    "name": "Aqua AI",
+    "slug": "aqua-ai",
+    "category": "DevOps",
+    "description": "AI-powered cloud-native security platform protecting containers, serverless, and cloud VMs throughout the lifecycle.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=aquasec.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Runtime enforcement actions",
+      "Image scanning data",
+      "Supply chain security scope"
+    ],
+    "recommendations": [
+      "Tune runtime policies gradually",
+      "Use image assurance policies",
+      "Enable drift prevention"
+    ]
+  },
+  {
+    "name": "Datree AI",
+    "slug": "datree-ai",
+    "category": "DevOps",
+    "description": "AI-powered Kubernetes misconfiguration prevention tool that enforces policies on YAML and Helm charts.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=datree.io&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Manifest content analysis",
+      "Policy evaluation data",
+      "CI pipeline integration"
+    ],
+    "recommendations": [
+      "Use offline mode for sensitive manifests",
+      "Customize policy rules",
+      "Review default rule set"
+    ]
+  },
+  {
+    "name": "Robusta AI",
+    "slug": "robusta-ai",
+    "category": "DevOps",
+    "description": "AI-powered Kubernetes troubleshooting platform that enriches alerts and automates remediation actions.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=robusta.dev&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cluster event collection",
+      "Pod log aggregation",
+      "Remediation action scope"
+    ],
+    "recommendations": [
+      "Filter sensitive logs",
+      "Restrict playbook actions",
+      "Use self-hosted relay"
+    ]
+  },
+  {
+    "name": "StormForge AI",
+    "slug": "stormforge-ai",
+    "category": "DevOps",
+    "description": "AI-powered Kubernetes resource optimization platform that uses ML to right-size containers automatically.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=stormforge.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Resource metric collection",
+      "Container config modification",
+      "Namespace-wide optimization"
+    ],
+    "recommendations": [
+      "Start with observe mode",
+      "Set resource boundaries",
+      "Review recommendations before applying"
+    ]
+  },
+  {
+    "name": "Sedai AI",
+    "slug": "sedai-ai",
+    "category": "DevOps",
+    "description": "AI-powered autonomous cloud management platform that optimizes performance, cost, and availability.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=sedai.io&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Autonomous resource modification",
+      "Cloud provider API access",
+      "Performance data collection"
+    ],
+    "recommendations": [
+      "Use approval mode initially",
+      "Set change boundaries",
+      "Monitor autonomous actions"
+    ]
+  },
+  {
+    "name": "Akuity AI",
+    "slug": "akuity-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced managed Argo CD platform for enterprise-grade GitOps deployments at scale.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=akuity.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Git repository credentials",
+      "Cluster connection secrets",
+      "Application manifest data"
+    ],
+    "recommendations": [
+      "Use Argo CD RBAC policies",
+      "Rotate repository credentials",
+      "Enable application-level sync windows"
+    ]
+  },
+  {
+    "name": "CrowdStrike Falcon AI",
+    "slug": "crowdstrike-falcon-ai",
+    "category": "Security",
+    "description": "AI-powered endpoint detection and response platform using ML to prevent breaches in real-time.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=crowdstrike.com&sz=128",
+    "riskScore": 7,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Kernel-level endpoint access",
+      "Telemetry data volume",
+      "Cloud workload visibility"
+    ],
+    "recommendations": [
+      "Tune detection sensitivity",
+      "Review prevention policies",
+      "Restrict API key scopes"
+    ]
+  },
+  {
+    "name": "SentinelOne Purple AI",
+    "slug": "sentinelone-purple-ai",
+    "category": "Security",
+    "description": "AI-powered cybersecurity platform with autonomous threat hunting and natural language security analysis.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=sentinelone.com&sz=128",
+    "riskScore": 7,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "365 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Autonomous response actions",
+      "Deep endpoint visibility",
+      "Data lake query scope"
+    ],
+    "recommendations": [
+      "Set policy to detect-only initially",
+      "Restrict automated remediation",
+      "Audit threat hunting queries"
+    ]
+  },
+  {
+    "name": "Darktrace AI",
+    "slug": "darktrace-ai",
+    "category": "Security",
+    "description": "Self-learning AI cybersecurity platform that detects and responds to novel threats across the digital ecosystem.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=darktrace.com&sz=128",
+    "riskScore": 7,
+    "dataHandling": {
+      "storage": "Customer-managed or cloud",
+      "retention": "Configurable",
+      "training": "Self-learning on customer data"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Network traffic analysis depth",
+      "Autonomous response capability",
+      "Email content scanning"
+    ],
+    "recommendations": [
+      "Start Antigena in human confirmation mode",
+      "Define action exclusions",
+      "Review model anomaly thresholds"
+    ]
+  },
+  {
+    "name": "Vectra AI",
+    "slug": "vectra-ai",
+    "category": "Security",
+    "description": "AI-driven network detection and response platform that identifies hidden cyberattacks in real-time.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=vectra.ai&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Network metadata collection",
+      "Identity tracking scope",
+      "Cloud integration breadth"
+    ],
+    "recommendations": [
+      "Tune detection models per environment",
+      "Review host scoring thresholds",
+      "Integrate with SOAR for response"
+    ]
+  },
+  {
+    "name": "Palo Alto Cortex XDR",
+    "slug": "palo-alto-cortex-xdr",
+    "category": "Security",
+    "description": "AI-powered extended detection and response platform correlating data across endpoints, network, and cloud.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=paloaltonetworks.com&sz=128",
+    "riskScore": 7,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "180 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Endpoint agent kernel access",
+      "Cross-data-source correlation",
+      "Automated response actions"
+    ],
+    "recommendations": [
+      "Configure response action approvals",
+      "Tune correlation rules",
+      "Review data collection profiles"
+    ]
+  },
+  {
+    "name": "Microsoft Security Copilot",
+    "slug": "microsoft-security-copilot",
+    "category": "Security",
+    "description": "AI-powered security assistant that helps analysts investigate threats using natural language queries.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=microsoft.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "Azure regions",
+      "retention": "Configurable",
+      "training": "No customer data training"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Broad security data access",
+      "LLM prompt injection risks",
+      "Cross-product data sharing"
+    ],
+    "recommendations": [
+      "Restrict plugin access",
+      "Review session audit logs",
+      "Define data sharing boundaries"
+    ]
+  },
+  {
+    "name": "Google Chronicle AI",
+    "slug": "google-chronicle-ai",
+    "category": "Security",
+    "description": "AI-powered security operations platform by Google that analyzes petabytes of security telemetry at speed.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=chronicle.security&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "Google Cloud",
+      "retention": "12 months",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Massive data ingestion scope",
+      "Detection rule complexity",
+      "Third-party feed integration"
+    ],
+    "recommendations": [
+      "Tune YARA-L rules",
+      "Restrict feed access",
+      "Monitor ingestion costs"
+    ]
+  },
+  {
+    "name": "Abnormal Security",
+    "slug": "abnormal-security",
+    "category": "Security",
+    "description": "AI-powered email security platform that detects and prevents sophisticated email attacks using behavioral AI.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=abnormalsecurity.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "Behavioral models on customer data"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Full email content access",
+      "Identity behavior profiling",
+      "API-level mailbox access"
+    ],
+    "recommendations": [
+      "Review auto-remediation settings",
+      "Audit detection categories",
+      "Limit mailbox scope"
+    ]
+  },
+  {
+    "name": "Tessian AI",
+    "slug": "tessian-ai",
+    "category": "Security",
+    "description": "AI-powered email security that prevents misdirected emails, data exfiltration, and phishing attacks.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=tessian.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "30 days",
+      "training": "ML on email patterns"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Email content analysis",
+      "Communication pattern profiling",
+      "DLP data sensitivity"
+    ],
+    "recommendations": [
+      "Configure DLP policies carefully",
+      "Review false positive rates",
+      "Communicate monitoring to staff"
+    ]
+  },
+  {
+    "name": "Orca Security AI",
+    "slug": "orca-security-ai",
+    "category": "Security",
+    "description": "AI-powered agentless cloud security platform that scans workloads, configurations, and identities.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=orca.security&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Agentless snapshot scanning",
+      "Cross-account role access",
+      "Sensitive data discovery"
+    ],
+    "recommendations": [
+      "Use least-privilege scanner roles",
+      "Review sensitive data findings",
+      "Segment by cloud account"
+    ]
+  },
+  {
+    "name": "Lacework AI",
+    "slug": "lacework-ai",
+    "category": "Security",
+    "description": "AI-powered cloud security platform using behavioral analysis to detect anomalies across cloud workloads.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=lacework.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "Polygraph behavioral models"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Cloud API integration depth",
+      "Behavioral baseline data",
+      "Agent telemetry scope"
+    ],
+    "recommendations": [
+      "Review polygraph anomalies",
+      "Tune alert severity levels",
+      "Restrict API token permissions"
+    ]
+  },
+  {
+    "name": "Wiz Security AI",
+    "slug": "wiz-security-ai",
+    "category": "Security",
+    "description": "AI-powered cloud security platform providing unified visibility across misconfigurations, vulnerabilities, and threats.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=wiz.io&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Full cloud graph scanning",
+      "Cross-tenant visibility",
+      "Sensitive data discovery"
+    ],
+    "recommendations": [
+      "Scope scanner permissions tightly",
+      "Prioritize toxic combinations",
+      "Review exposure paths"
+    ]
+  },
+  {
+    "name": "Snyk Security Intelligence",
+    "slug": "snyk-security-intelligence",
+    "category": "Security",
+    "description": "AI-powered vulnerability intelligence platform that prioritizes and remediates security issues in code.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=snyk.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Source code scanning depth",
+      "Container image analysis",
+      "IaC template exposure"
+    ],
+    "recommendations": [
+      "Use Snyk broker for air-gapped repos",
+      "Prioritize by exploitability",
+      "Automate fix PRs cautiously"
+    ]
+  },
+  {
+    "name": "Cybereason AI",
+    "slug": "cybereason-ai",
+    "category": "Security",
+    "description": "AI-powered endpoint protection platform that uses behavioral analysis to detect and end malicious operations.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cybereason.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Endpoint process monitoring",
+      "MalOp correlation depth",
+      "Automated response actions"
+    ],
+    "recommendations": [
+      "Review MalOp remediation steps",
+      "Configure response approvals",
+      "Tune detection policies"
+    ]
+  },
+  {
+    "name": "Elastic Security AI",
+    "slug": "elastic-security-ai",
+    "category": "Security",
+    "description": "AI-powered SIEM and security analytics platform built on Elasticsearch for threat detection and response.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=elastic.co&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Self-hosted or cloud",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Log data ingestion scope",
+      "Detection rule complexity",
+      "Response action breadth"
+    ],
+    "recommendations": [
+      "Use ILM for data lifecycle",
+      "Review prebuilt rules",
+      "Restrict Kibana space access"
+    ]
+  },
+  {
+    "name": "Recorded Future AI",
+    "slug": "recorded-future-ai",
+    "category": "Security",
+    "description": "AI-powered threat intelligence platform that provides real-time insights into cyber threats and vulnerabilities.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=recordedfuture.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Dark web data collection",
+      "Intelligence feed integration",
+      "Asset exposure monitoring"
+    ],
+    "recommendations": [
+      "Define intelligence requirements",
+      "Restrict API access",
+      "Review alert thresholds"
+    ]
+  },
+  {
+    "name": "Trellix AI",
+    "slug": "trellix-ai",
+    "category": "Security",
+    "description": "AI-powered extended detection and response platform combining endpoint, network, and cloud security.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=trellix.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Multi-vector detection scope",
+      "Automated response orchestration",
+      "Policy enforcement breadth"
+    ],
+    "recommendations": [
+      "Phase response automation",
+      "Review correlation rules",
+      "Tune false positive rates"
+    ]
+  },
+  {
+    "name": "Fortinet FortiAI",
+    "slug": "fortinet-fortiai",
+    "category": "Security",
+    "description": "AI-powered network security assistant that accelerates threat investigation and automates security operations.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=fortinet.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "On-premise or cloud",
+      "retention": "Device-dependent",
+      "training": "FortiGuard Labs models"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Network traffic inspection depth",
+      "Security fabric integration scope",
+      "Automated policy changes"
+    ],
+    "recommendations": [
+      "Review AI-suggested policies",
+      "Restrict fabric access",
+      "Audit FortiGuard connections"
+    ]
+  },
+  {
+    "name": "Sophos AI",
+    "slug": "sophos-ai",
+    "category": "Security",
+    "description": "AI-powered cybersecurity platform with deep learning models for endpoint, network, and cloud protection.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=sophos.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "90 days",
+      "training": "SophosLabs models"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Endpoint deep learning scanning",
+      "Managed detection service access",
+      "XDR data lake scope"
+    ],
+    "recommendations": [
+      "Configure tamper protection",
+      "Review MTR recommendations",
+      "Tune web filtering policies"
+    ]
+  },
+  {
+    "name": "Trend Micro Vision One",
+    "slug": "trend-micro-vision-one",
+    "category": "Security",
+    "description": "AI-powered XDR platform that correlates threat data across email, endpoints, servers, and networks.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=trendmicro.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "Regional data centers",
+      "retention": "180 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Cross-layer detection scope",
+      "Automated response actions",
+      "Virtual patching breadth"
+    ],
+    "recommendations": [
+      "Review workbench alerts",
+      "Configure response playbooks",
+      "Enable risk insights"
+    ]
+  },
+  {
+    "name": "Check Point ThreatCloud AI",
+    "slug": "checkpoint-threatcloud-ai",
+    "category": "Security",
+    "description": "AI-powered threat prevention engine using big data intelligence to protect networks and cloud workloads.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=checkpoint.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Cloud-based",
+      "retention": "Continuous",
+      "training": "Threat intelligence models"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Network inspection depth",
+      "Threat emulation data",
+      "Gateway configuration access"
+    ],
+    "recommendations": [
+      "Enable threat extraction",
+      "Review IPS profiles",
+      "Tune anti-bot settings"
+    ]
+  },
+  {
+    "name": "Proofpoint AI",
+    "slug": "proofpoint-ai",
+    "category": "Security",
+    "description": "AI-powered cybersecurity platform protecting against email threats, data loss, and insider risks.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=proofpoint.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "90 days",
+      "training": "Threat models"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Email content scanning",
+      "User behavior profiling",
+      "DLP data inspection"
+    ],
+    "recommendations": [
+      "Review VAP reports",
+      "Configure DLP policies",
+      "Tune phishing detection"
+    ]
+  },
+  {
+    "name": "Mimecast AI",
+    "slug": "mimecast-ai",
+    "category": "Security",
+    "description": "AI-powered email security and resilience platform that protects against phishing and business email compromise.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=mimecast.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Regional data centers",
+      "retention": "90 days",
+      "training": "Threat models"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Email content analysis",
+      "Archive data retention",
+      "URL rewriting scope"
+    ],
+    "recommendations": [
+      "Review impersonation policies",
+      "Tune attachment policies",
+      "Monitor archive access"
+    ]
+  },
+  {
+    "name": "Zscaler AI",
+    "slug": "zscaler-ai",
+    "category": "Security",
+    "description": "AI-powered zero trust exchange platform that secures user and workload communications at scale.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=zscaler.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "Global data centers",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "All traffic inspection",
+      "SSL decryption scope",
+      "User activity visibility"
+    ],
+    "recommendations": [
+      "Define SSL inspection exclusions",
+      "Review DLP dictionaries",
+      "Configure app segmentation"
+    ]
+  },
+  {
+    "name": "Netskope AI",
+    "slug": "netskope-ai",
+    "category": "Security",
+    "description": "AI-driven SASE platform providing intelligent data and threat protection for cloud services and web traffic.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=netskope.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "Regional data centers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Inline traffic inspection",
+      "Cloud app data visibility",
+      "CASB policy scope"
+    ],
+    "recommendations": [
+      "Configure cloud confidence levels",
+      "Review real-time policies",
+      "Tune DLP profiles"
+    ]
+  },
+  {
+    "name": "Cloudflare AI Security",
+    "slug": "cloudflare-ai-security",
+    "category": "Security",
+    "description": "AI-powered web application and API security using ML models for bot detection and threat mitigation.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cloudflare.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Global edge network",
+      "retention": "72 hours for logs",
+      "training": "Aggregate threat models"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Traffic interception scope",
+      "DNS resolution visibility",
+      "Bot score accuracy"
+    ],
+    "recommendations": [
+      "Review WAF managed rules",
+      "Configure rate limiting",
+      "Tune bot management"
+    ]
+  },
+  {
+    "name": "Snorkel AI Security",
+    "slug": "snorkel-ai-security",
+    "category": "Security",
+    "description": "AI data development platform for building and labeling security-focused machine learning training datasets.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=snorkel.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Project lifetime",
+      "training": "Customer data for labeling"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Training data sensitivity",
+      "Model output accuracy",
+      "Labeling function bias"
+    ],
+    "recommendations": [
+      "Audit labeling functions",
+      "Validate model outputs",
+      "Restrict data access"
+    ]
+  },
+  {
+    "name": "Hunters AI",
+    "slug": "hunters-ai",
+    "category": "Security",
+    "description": "AI-powered SOC platform that automates threat detection and investigation across security data sources.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=hunters.security&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "12 months",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Multi-source data correlation",
+      "Investigation data exposure",
+      "Automated triage actions"
+    ],
+    "recommendations": [
+      "Review detection stories",
+      "Tune data source priorities",
+      "Restrict analyst permissions"
+    ]
+  },
+  {
+    "name": "Securiti AI",
+    "slug": "securiti-ai",
+    "category": "Security",
+    "description": "AI-powered data security and privacy platform for discovering, classifying, and protecting sensitive data.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=securiti.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Sensitive data discovery scope",
+      "Cross-system scanning access",
+      "Privacy regulation complexity"
+    ],
+    "recommendations": [
+      "Scope scanning incrementally",
+      "Review classification accuracy",
+      "Automate DSR workflows"
+    ]
+  },
+  {
+    "name": "BigID AI",
+    "slug": "bigid-ai",
+    "category": "Security",
+    "description": "AI-powered data intelligence platform for privacy, security, and governance of enterprise data at scale.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=bigid.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Data source connection breadth",
+      "PII discovery depth",
+      "Classification model accuracy"
+    ],
+    "recommendations": [
+      "Validate classifications manually",
+      "Restrict connector credentials",
+      "Enable access intelligence"
+    ]
+  },
+  {
+    "name": "OneTrust AI",
+    "slug": "onetrust-ai",
+    "category": "Security",
+    "description": "AI-powered trust intelligence platform for privacy management, GRC, and ethics program automation.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=onetrust.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Privacy program data sensitivity",
+      "Vendor risk assessment data",
+      "Cookie consent data volume"
+    ],
+    "recommendations": [
+      "Review assessment templates",
+      "Audit vendor inventories",
+      "Configure consent banners carefully"
+    ]
+  },
+  {
+    "name": "Immuta AI",
+    "slug": "immuta-ai",
+    "category": "Security",
+    "description": "AI-powered data access control platform that automates policy enforcement across cloud data platforms.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=immuta.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Audit log persistent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Data platform integration depth",
+      "Policy enforcement accuracy",
+      "Sensitive data tagging"
+    ],
+    "recommendations": [
+      "Test policies in dry-run mode",
+      "Review data source subscriptions",
+      "Audit purpose-based access"
+    ]
+  },
+  {
+    "name": "Varonis AI",
+    "slug": "varonis-ai",
+    "category": "Security",
+    "description": "AI-powered data security platform that detects insider threats and protects sensitive data across file systems.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=varonis.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "12 months",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "File system access monitoring",
+      "User behavior analysis",
+      "Permission mapping depth"
+    ],
+    "recommendations": [
+      "Review overexposed data",
+      "Investigate stale permissions",
+      "Tune alert models"
+    ]
+  },
+  {
+    "name": "Cyera AI",
+    "slug": "cyera-ai",
+    "category": "Security",
+    "description": "AI-powered data security platform providing instant data landscape mapping and risk assessment.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cyera.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Multi-cloud data scanning",
+      "Classification accuracy",
+      "Access pattern analysis"
+    ],
+    "recommendations": [
+      "Validate discovery results",
+      "Prioritize crown jewel data",
+      "Review access policies"
+    ]
+  },
+  {
+    "name": "Nightfall AI",
+    "slug": "nightfall-ai",
+    "category": "Security",
+    "description": "AI-powered cloud data leak prevention platform that detects and protects sensitive data in SaaS applications.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=nightfall.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "SaaS content scanning",
+      "Detection model accuracy",
+      "API integration scope"
+    ],
+    "recommendations": [
+      "Tune detection rules",
+      "Review false positives",
+      "Restrict integration permissions"
+    ]
+  },
+  {
+    "name": "Torq AI",
+    "slug": "torq-ai",
+    "category": "Security",
+    "description": "AI-powered security hyperautomation platform that orchestrates and automates security workflows at scale.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=torq.io&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cross-tool action orchestration",
+      "Credential aggregation",
+      "Automated response scope"
+    ],
+    "recommendations": [
+      "Use approval steps for critical actions",
+      "Audit workflow permissions",
+      "Restrict integration tokens"
+    ]
+  },
+  {
+    "name": "Tines AI",
+    "slug": "tines-ai",
+    "category": "Security",
+    "description": "AI-enhanced no-code security orchestration platform for building automated workflows and playbooks.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=tines.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Integration credential storage",
+      "Story action breadth",
+      "Webhook exposure"
+    ],
+    "recommendations": [
+      "Use credential management",
+      "Restrict story sharing",
+      "Audit action permissions"
+    ]
+  },
+  {
+    "name": "Swimlane AI",
+    "slug": "swimlane-ai",
+    "category": "Security",
+    "description": "AI-powered security automation platform that orchestrates incident response and threat management workflows.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=swimlane.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers or self-hosted",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Playbook action scope",
+      "Case data sensitivity",
+      "Integration connector access"
+    ],
+    "recommendations": [
+      "Review playbook permissions",
+      "Encrypt case data",
+      "Audit connector credentials"
+    ]
+  },
+  {
+    "name": "Stellar Cyber AI",
+    "slug": "stellar-cyber-ai",
+    "category": "Security",
+    "description": "AI-powered open XDR platform that unifies security operations with automated detection and response.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=stellarcyber.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Multi-sensor data collection",
+      "Automated correlation scope",
+      "Response action breadth"
+    ],
+    "recommendations": [
+      "Tune ML detection models",
+      "Review kill chain alerts",
+      "Restrict response automations"
+    ]
+  },
+  {
+    "name": "Exabeam AI",
+    "slug": "exabeam-ai",
+    "category": "Security",
+    "description": "AI-powered SIEM platform using behavioral analytics to detect threats and automate incident response.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=exabeam.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "365 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "User behavior timeline depth",
+      "Log source integration scope",
+      "Automated playbook actions"
+    ],
+    "recommendations": [
+      "Review notable sessions",
+      "Tune risk scoring rules",
+      "Audit data source connections"
+    ]
+  },
+  {
+    "name": "LogRhythm AI",
+    "slug": "logrhythm-ai",
+    "category": "Security",
+    "description": "AI-powered SIEM platform that accelerates threat detection and compliance with intelligent security analytics.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=logrhythm.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Self-hosted or cloud",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Log collection scope",
+      "AI engine processing depth",
+      "SmartResponse automation"
+    ],
+    "recommendations": [
+      "Define log source priorities",
+      "Tune AI engine rules",
+      "Review SmartResponse actions"
+    ]
+  },
+  {
+    "name": "Sumo Logic AI",
+    "slug": "sumo-logic-ai",
+    "category": "Security",
+    "description": "AI-powered cloud SIEM that provides real-time security analytics and automated threat detection.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=sumologic.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Configurable",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Cloud log ingestion volume",
+      "Security insight correlation",
+      "Automated playbook scope"
+    ],
+    "recommendations": [
+      "Partition sensitive data",
+      "Review insight severity",
+      "Configure field extraction rules"
+    ]
+  },
+  {
+    "name": "Rapid7 InsightIDR AI",
+    "slug": "rapid7-insightidr-ai",
+    "category": "Security",
+    "description": "AI-powered cloud SIEM and XDR platform that detects threats using user and attacker behavior analytics.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=rapid7.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "13 months",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Endpoint agent data",
+      "User behavior analytics scope",
+      "Network sensor visibility"
+    ],
+    "recommendations": [
+      "Deploy sensors strategically",
+      "Review investigation timelines",
+      "Tune detection rules"
+    ]
+  },
+  {
+    "name": "Pentera AI",
+    "slug": "pentera-ai",
+    "category": "Security",
+    "description": "AI-powered automated penetration testing platform that continuously validates security posture.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=pentera.io&sz=128",
+    "riskScore": 7,
+    "dataHandling": {
+      "storage": "On-premise",
+      "retention": "Test results persistent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Active exploitation attempts",
+      "Credential harvesting tests",
+      "Network disruption potential"
+    ],
+    "recommendations": [
+      "Schedule tests during maintenance",
+      "Define scope boundaries",
+      "Review findings promptly"
+    ]
+  },
+  {
+    "name": "AttackIQ AI",
+    "slug": "attackiq-ai",
+    "category": "Security",
+    "description": "AI-powered breach and attack simulation platform that continuously validates security control effectiveness.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=attackiq.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "MITRE ATT&CK simulation scope",
+      "Agent deployment breadth",
+      "Test scenario data sensitivity"
+    ],
+    "recommendations": [
+      "Coordinate with SOC team",
+      "Review assessment results",
+      "Prioritize control gaps"
+    ]
+  },
+  {
+    "name": "SafeBreach AI",
+    "slug": "safebreach-ai",
+    "category": "Security",
+    "description": "AI-powered breach and attack simulation platform for continuous security validation and risk assessment.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=safebreach.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Attack simulation execution",
+      "Network traversal testing",
+      "Data exfiltration simulation"
+    ],
+    "recommendations": [
+      "Notify security teams before tests",
+      "Limit simulation scope",
+      "Review remediation priorities"
+    ]
+  },
+  {
+    "name": "Cymulate AI",
+    "slug": "cymulate-ai",
+    "category": "Security",
+    "description": "AI-powered attack surface management and security validation platform for continuous threat exposure assessment.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cymulate.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Attack vector simulation",
+      "Exposure assessment scope",
+      "Purple team automation"
+    ],
+    "recommendations": [
+      "Define assessment scope",
+      "Review security score trends",
+      "Coordinate purple team exercises"
+    ]
+  },
+  {
+    "name": "Semgrep AI",
+    "slug": "semgrep-ai",
+    "category": "Security",
+    "description": "AI-powered static analysis tool that finds bugs and security vulnerabilities using lightweight code patterns.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=semgrep.dev&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Findings persistent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Source code pattern analysis",
+      "Custom rule complexity",
+      "CI integration scope"
+    ],
+    "recommendations": [
+      "Review community rules",
+      "Write custom rules for org patterns",
+      "Use Semgrep App for management"
+    ]
+  },
+  {
+    "name": "Checkmarx AI",
+    "slug": "checkmarx-ai",
+    "category": "Security",
+    "description": "AI-powered application security testing platform for SAST, SCA, and supply chain security analysis.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=checkmarx.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "Scan lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Full source code scanning",
+      "Dependency analysis depth",
+      "Build pipeline integration"
+    ],
+    "recommendations": [
+      "Prioritize by severity",
+      "Review fix recommendations",
+      "Tune query presets"
+    ]
+  },
+  {
+    "name": "Veracode AI",
+    "slug": "veracode-ai",
+    "category": "Security",
+    "description": "AI-powered application security platform with automated code scanning and intelligent fix recommendations.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=veracode.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Scan lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Binary code upload",
+      "Scan result data sensitivity",
+      "Fix suggestion accuracy"
+    ],
+    "recommendations": [
+      "Review fix suggestions",
+      "Prioritize by policy",
+      "Use sandbox scans for testing"
+    ]
+  },
+  {
+    "name": "Sonatype AI",
+    "slug": "sonatype-ai",
+    "category": "Security",
+    "description": "AI-powered software supply chain security platform that identifies vulnerable and malicious open-source components.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=sonatype.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Dependency analysis breadth",
+      "Repository proxy access",
+      "Policy enforcement scope"
+    ],
+    "recommendations": [
+      "Configure quarantine policies",
+      "Review waivers periodically",
+      "Monitor namespace attacks"
+    ]
+  },
+  {
+    "name": "Socket AI",
+    "slug": "socket-ai",
+    "category": "Security",
+    "description": "AI-powered supply chain security tool that detects suspicious behavior in open-source npm packages.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=socket.dev&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Scan lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Package behavior analysis",
+      "Dependency tree visibility",
+      "Alert accuracy"
+    ],
+    "recommendations": [
+      "Review high-risk packages",
+      "Monitor new dependencies",
+      "Configure alert thresholds"
+    ]
+  },
+  {
+    "name": "Chainguard AI",
+    "slug": "chainguard-ai",
+    "category": "Security",
+    "description": "AI-powered supply chain security platform providing hardened container images and SBOM generation.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=chainguard.dev&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Image lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Base image dependency",
+      "SBOM data exposure",
+      "Image signing trust"
+    ],
+    "recommendations": [
+      "Verify image signatures",
+      "Review SBOM contents",
+      "Use distroless images"
+    ]
+  },
+  {
+    "name": "Endor Labs AI",
+    "slug": "endor-labs-ai",
+    "category": "Security",
+    "description": "AI-powered dependency lifecycle management platform that identifies reachable vulnerabilities in code.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=endorlabs.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Scan lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Call graph analysis depth",
+      "Repository code access",
+      "Reachability assessment accuracy"
+    ],
+    "recommendations": [
+      "Focus on reachable vulns",
+      "Review dependency scores",
+      "Integrate in CI pipeline"
+    ]
+  },
+  {
+    "name": "Apiiro AI",
+    "slug": "apiiro-ai",
+    "category": "Security",
+    "description": "AI-powered application security posture management platform that analyzes code changes for risk.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=apiiro.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Code change risk analysis",
+      "Developer behavior profiling",
+      "Repository integration depth"
+    ],
+    "recommendations": [
+      "Review risk assessments",
+      "Configure risk policies",
+      "Audit integration permissions"
+    ]
+  },
+  {
+    "name": "Contrast Security AI",
+    "slug": "contrast-security-ai",
+    "category": "Security",
+    "description": "AI-powered runtime application security platform that instruments code for vulnerability detection in production.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=contrastsecurity.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Runtime code instrumentation",
+      "Application data flow visibility",
+      "Performance overhead"
+    ],
+    "recommendations": [
+      "Monitor performance impact",
+      "Review route coverage",
+      "Configure blocking rules carefully"
+    ]
+  },
+  {
+    "name": "Salt Security AI",
+    "slug": "salt-security-ai",
+    "category": "Security",
+    "description": "AI-powered API security platform that discovers APIs and detects threats using behavioral analysis.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=salt.security&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "API traffic analysis depth",
+      "Sensitive data in transit",
+      "Shadow API discovery"
+    ],
+    "recommendations": [
+      "Review discovered APIs",
+      "Investigate attack signals",
+      "Prioritize posture gaps"
+    ]
+  },
+  {
+    "name": "Noname Security AI",
+    "slug": "noname-security-ai",
+    "category": "Security",
+    "description": "AI-powered API security platform for discovering, testing, and protecting APIs across the lifecycle.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=nonamesecurity.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "API inventory completeness",
+      "Traffic analysis sensitivity",
+      "Runtime protection scope"
+    ],
+    "recommendations": [
+      "Validate API inventory",
+      "Review anomaly detections",
+      "Configure blocking policies"
+    ]
+  },
+  {
+    "name": "Cequence AI",
+    "slug": "cequence-ai",
+    "category": "Security",
+    "description": "AI-powered API security platform that protects against automated attacks, fraud, and business logic abuse.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cequence.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "API traffic interception",
+      "Bot detection accuracy",
+      "Business logic analysis"
+    ],
+    "recommendations": [
+      "Tune bot mitigation rules",
+      "Review API discovery results",
+      "Configure rate policies"
+    ]
+  },
+  {
+    "name": "Traceable AI",
+    "slug": "traceable-ai",
+    "category": "Security",
+    "description": "AI-powered API security platform that provides deep observability and threat protection for APIs.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=traceable.ai&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "API trace data sensitivity",
+      "User activity tracking",
+      "Data flow mapping depth"
+    ],
+    "recommendations": [
+      "Mask sensitive trace data",
+      "Review API risk scores",
+      "Configure data classification"
+    ]
+  },
+  {
+    "name": "Oligo Security",
+    "slug": "oligo-security",
+    "category": "Security",
+    "description": "AI-powered runtime application security platform that monitors library behavior in production environments.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=oligo.security&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Runtime library monitoring",
+      "eBPF-based observation",
+      "Alert accuracy"
+    ],
+    "recommendations": [
+      "Review runtime profiles",
+      "Validate vulnerability reachability",
+      "Monitor false positive rates"
+    ]
+  },
+  {
+    "name": "Gutsy AI",
+    "slug": "gutsy-ai",
+    "category": "Security",
+    "description": "AI-powered security process mining platform that analyzes how security programs actually operate.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=gutsy.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "12 months",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Security tool data aggregation",
+      "Process compliance visibility",
+      "Workflow gap analysis data"
+    ],
+    "recommendations": [
+      "Scope data sources incrementally",
+      "Review process maps",
+      "Validate compliance findings"
+    ]
+  },
+  {
+    "name": "Drata AI",
+    "slug": "drata-ai",
+    "category": "Security",
+    "description": "AI-powered compliance automation platform that continuously monitors and collects evidence for security audits.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=drata.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Audit period",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Integration data collection breadth",
+      "Employee monitoring scope",
+      "Evidence sensitivity"
+    ],
+    "recommendations": [
+      "Review connected integrations",
+      "Configure monitoring scope",
+      "Audit evidence access"
+    ]
+  },
+  {
+    "name": "Vanta AI",
+    "slug": "vanta-ai",
+    "category": "Security",
+    "description": "AI-powered trust management platform that automates security compliance and continuous monitoring.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=vanta.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Audit period",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Infrastructure scanning scope",
+      "Employee device monitoring",
+      "Vendor risk data"
+    ],
+    "recommendations": [
+      "Review test configurations",
+      "Scope monitoring per framework",
+      "Audit vendor assessments"
+    ]
+  },
+  {
+    "name": "Secureframe AI",
+    "slug": "secureframe-ai",
+    "category": "Security",
+    "description": "AI-powered security and compliance automation platform for achieving and maintaining SOC 2, ISO, and more.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=secureframe.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Audit period",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Multi-integration data access",
+      "Policy template accuracy",
+      "Continuous monitoring scope"
+    ],
+    "recommendations": [
+      "Customize policy templates",
+      "Review integration permissions",
+      "Schedule regular evidence reviews"
+    ]
+  },
+  {
+    "name": "Anvilogic AI",
+    "slug": "anvilogic-ai",
+    "category": "Security",
+    "description": "AI-powered threat detection engineering platform that operationalizes MITRE ATT&CK framework for SOC teams.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=anvilogic.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Detection lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Detection rule management",
+      "SIEM data lake access",
+      "Threat scenario modeling"
+    ],
+    "recommendations": [
+      "Validate detection coverage",
+      "Review purple team results",
+      "Tune data forge queries"
+    ]
+  },
+  {
+    "name": "Bitsight AI",
+    "slug": "bitsight-ai",
+    "category": "Security",
+    "description": "AI-powered security ratings platform that continuously assesses cyber risk across your digital ecosystem.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=bitsight.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "External attack surface visibility",
+      "Third-party risk data",
+      "Rating accuracy limitations"
+    ],
+    "recommendations": [
+      "Validate rating findings",
+      "Monitor portfolio changes",
+      "Respond to diligence requests"
+    ]
+  },
+  {
+    "name": "SecurityScorecard AI",
+    "slug": "securityscorecard-ai",
+    "category": "Security",
+    "description": "AI-powered cybersecurity ratings platform providing instant security risk assessments of any organization.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=securityscorecard.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "External scanning scope",
+      "Scorecard accuracy",
+      "Vendor portfolio data"
+    ],
+    "recommendations": [
+      "Review factor breakdowns",
+      "Submit evidence for disputes",
+      "Monitor continuous alerts"
+    ]
+  },
+  {
+    "name": "UpGuard AI",
+    "slug": "upguard-ai",
+    "category": "Security",
+    "description": "AI-powered third-party risk and attack surface management platform for vendor security assessment.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=upguard.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US and AU servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Vendor data collection",
+      "Questionnaire response sensitivity",
+      "Data leak detection scope"
+    ],
+    "recommendations": [
+      "Customize questionnaire templates",
+      "Monitor data leak alerts",
+      "Prioritize vendor tiers"
+    ]
+  },
+  {
+    "name": "Censys AI",
+    "slug": "censys-ai",
+    "category": "Security",
+    "description": "AI-powered attack surface management platform that discovers and monitors all internet-facing assets.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=censys.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Internet scanning scope",
+      "Asset attribution accuracy",
+      "Cloud connector access"
+    ],
+    "recommendations": [
+      "Validate asset ownership",
+      "Review risk prioritization",
+      "Configure cloud connectors"
+    ]
+  },
+  {
+    "name": "CrowdStrike Falcon Surface",
+    "slug": "crowdstrike-falcon-surface",
+    "category": "Security",
+    "description": "AI-powered external attack surface management that maps and monitors an organization's digital footprint.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=crowdstrike.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "External asset discovery",
+      "Subsidiary mapping depth",
+      "Dark web monitoring"
+    ],
+    "recommendations": [
+      "Validate discovered assets",
+      "Prioritize exposed services",
+      "Review subsidiary connections"
+    ]
+  },
+  {
+    "name": "Axonius AI",
+    "slug": "axonius-ai",
+    "category": "Security",
+    "description": "AI-powered cybersecurity asset management platform that provides a unified view of all devices and users.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=axonius.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Multi-adapter data aggregation",
+      "Asset correlation depth",
+      "Enforcement action scope"
+    ],
+    "recommendations": [
+      "Audit adapter connections",
+      "Review enforcement policies",
+      "Validate asset correlations"
+    ]
+  },
+  {
+    "name": "Sevco AI",
+    "slug": "sevco-ai",
+    "category": "Security",
+    "description": "AI-powered security asset intelligence platform that creates a real-time inventory of all IT assets.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=sevco.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Multi-source asset correlation",
+      "Integration data breadth",
+      "Telemetry gap detection"
+    ],
+    "recommendations": [
+      "Review asset convergence",
+      "Audit data source connections",
+      "Investigate coverage gaps"
+    ]
+  },
+  {
+    "name": "Silk Security AI",
+    "slug": "silk-security-ai",
+    "category": "Security",
+    "description": "AI-powered risk-based vulnerability management platform that prioritizes and drives remediation at scale.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=silk.security&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Finding aggregation scope",
+      "Asset context depth",
+      "Remediation routing data"
+    ],
+    "recommendations": [
+      "Validate risk scoring",
+      "Review SLA compliance",
+      "Configure routing rules"
+    ]
+  },
+  {
+    "name": "Vulcan Cyber AI",
+    "slug": "vulcan-cyber-ai",
+    "category": "Security",
+    "description": "AI-powered vulnerability risk management platform that orchestrates remediation across security tools.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=vulcan.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Multi-scanner data aggregation",
+      "Remediation playbook scope",
+      "Asset risk scoring accuracy"
+    ],
+    "recommendations": [
+      "Validate risk prioritization",
+      "Review remediation campaigns",
+      "Configure integration filters"
+    ]
+  },
+  {
+    "name": "Nucleus Security AI",
+    "slug": "nucleus-security-ai",
+    "category": "Security",
+    "description": "AI-powered vulnerability management platform that unifies scan data and automates remediation workflows.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=nucleussec.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Scan data consolidation",
+      "Assignment workflow data",
+      "Risk score calculation accuracy"
+    ],
+    "recommendations": [
+      "Review connector configurations",
+      "Validate risk algorithms",
+      "Audit assignment rules"
+    ]
+  },
+  {
+    "name": "Rezilion AI",
+    "slug": "rezilion-ai",
+    "category": "Security",
+    "description": "AI-powered vulnerability validation platform that determines which vulnerabilities are actually exploitable in runtime.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=rezilion.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Runtime analysis depth",
+      "Memory inspection scope",
+      "Exploitability assessment accuracy"
+    ],
+    "recommendations": [
+      "Validate runtime findings",
+      "Focus remediation on exploitable vulns",
+      "Review patch recommendations"
+    ]
+  },
+  {
+    "name": "Seemplicity AI",
+    "slug": "seemplicity-ai",
+    "category": "Security",
+    "description": "AI-powered security remediation operations platform that automates finding deduplication and assignment.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=seemplicity.io&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cross-tool finding aggregation",
+      "Workflow automation scope",
+      "SLA tracking data"
+    ],
+    "recommendations": [
+      "Configure dedup rules carefully",
+      "Review routing policies",
+      "Monitor SLA compliance"
+    ]
+  },
+  {
+    "name": "Grip Security AI",
+    "slug": "grip-security-ai",
+    "category": "Security",
+    "description": "AI-powered SaaS security control plane that discovers and manages shadow SaaS applications.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=grip.security&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "SaaS discovery scope",
+      "User identity correlation",
+      "OAuth token visibility"
+    ],
+    "recommendations": [
+      "Review discovered SaaS apps",
+      "Revoke unused OAuth grants",
+      "Enforce SSO policies"
+    ]
+  },
+  {
+    "name": "Nudge Security AI",
+    "slug": "nudge-security-ai",
+    "category": "Security",
+    "description": "AI-powered SaaS security platform that discovers cloud and SaaS assets through email metadata analysis.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=nudgesecurity.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Email metadata analysis",
+      "SaaS account discovery",
+      "OAuth grant visibility"
+    ],
+    "recommendations": [
+      "Review discovered accounts",
+      "Nudge users on risky apps",
+      "Monitor supply chain risks"
+    ]
+  },
+  {
+    "name": "Valence Security AI",
+    "slug": "valence-security-ai",
+    "category": "Security",
+    "description": "AI-powered SaaS security platform for remediating misconfigurations and managing third-party integrations.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=valencesecurity.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "SaaS configuration visibility",
+      "Third-party integration mapping",
+      "Remediation automation scope"
+    ],
+    "recommendations": [
+      "Review SaaS posture findings",
+      "Audit third-party integrations",
+      "Configure auto-remediation carefully"
+    ]
+  },
+  {
+    "name": "Adaptive Shield AI",
+    "slug": "adaptive-shield-ai",
+    "category": "Security",
+    "description": "AI-powered SaaS security posture management platform for continuous monitoring and misconfiguration detection.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=adaptive-shield.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "SaaS admin API access",
+      "Configuration posture data",
+      "User privilege analysis"
+    ],
+    "recommendations": [
+      "Review security checks",
+      "Prioritize critical misconfigs",
+      "Monitor posture drift"
+    ]
+  },
+  {
+    "name": "AppOmni AI",
+    "slug": "appomni-ai",
+    "category": "Security",
+    "description": "AI-powered SaaS security management platform providing deep visibility into SaaS application configurations.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=appomni.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "SaaS data access depth",
+      "Configuration analysis scope",
+      "Third-party app visibility"
+    ],
+    "recommendations": [
+      "Review data exposure findings",
+      "Audit connected apps",
+      "Configure alerting policies"
+    ]
+  },
+  {
+    "name": "Mitiga AI",
+    "slug": "mitiga-ai",
+    "category": "Security",
+    "description": "AI-powered cloud investigation and response automation platform for detecting and responding to cloud threats.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=mitiga.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Investigation lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cloud log analysis depth",
+      "Investigation data sensitivity",
+      "Response action scope"
+    ],
+    "recommendations": [
+      "Review investigation findings",
+      "Restrict response permissions",
+      "Configure detection rules"
+    ]
+  },
+  {
+    "name": "Gem Security AI",
+    "slug": "gem-security-ai",
+    "category": "Security",
+    "description": "AI-powered cloud detection and response platform that provides real-time threat detection for cloud environments.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=gem.security&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cloud audit log analysis",
+      "Investigation timeline data",
+      "Response automation scope"
+    ],
+    "recommendations": [
+      "Review detection policies",
+      "Configure cloud connectors",
+      "Audit response playbooks"
+    ]
+  },
+  {
+    "name": "Stream Security AI",
+    "slug": "stream-security-ai",
+    "category": "Security",
+    "description": "AI-powered cloud twin platform that models cloud environments for real-time threat detection and exposure management.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=stream.security&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cloud environment modeling",
+      "Identity access analysis",
+      "Exposure path calculation"
+    ],
+    "recommendations": [
+      "Validate cloud twin accuracy",
+      "Review exposure paths",
+      "Configure identity policies"
+    ]
+  },
+  {
+    "name": "Permiso AI",
+    "slug": "permiso-ai",
+    "category": "Security",
+    "description": "AI-powered identity threat detection platform that monitors cloud identities for suspicious activity.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=permiso.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Identity activity monitoring",
+      "Cloud provider API access",
+      "Behavioral analysis depth"
+    ],
+    "recommendations": [
+      "Review identity risk scores",
+      "Configure detection policies",
+      "Monitor service account activity"
+    ]
+  },
+  {
+    "name": "Opal Security AI",
+    "slug": "opal-security-ai",
+    "category": "Security",
+    "description": "AI-powered access management platform that automates least-privilege access controls and just-in-time provisioning.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=opal.dev&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Audit log persistent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Access provisioning scope",
+      "Identity provider integration",
+      "Approval workflow data"
+    ],
+    "recommendations": [
+      "Configure time-bound access",
+      "Review access request patterns",
+      "Audit auto-approval rules"
+    ]
+  },
+  {
+    "name": "ConductorOne AI",
+    "slug": "conductorone-ai",
+    "category": "Security",
+    "description": "AI-powered identity security platform that automates access reviews, provisioning, and least-privilege enforcement.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=conductorone.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Audit period",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Identity data aggregation",
+      "Access review scope",
+      "Provisioning automation breadth"
+    ],
+    "recommendations": [
+      "Configure review campaigns",
+      "Validate access recommendations",
+      "Monitor provisioning changes"
+    ]
+  },
+  {
+    "name": "Silverfort AI",
+    "slug": "silverfort-ai",
+    "category": "Security",
+    "description": "AI-powered identity protection platform that extends MFA and zero trust to all resources without agents.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=silverfort.com&sz=128",
+    "riskScore": 6,
+    "dataHandling": {
+      "storage": "US and EU servers",
+      "retention": "90 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": true
+    },
+    "riskFactors": [
+      "Authentication traffic analysis",
+      "MFA enforcement scope",
+      "Service account discovery"
+    ],
+    "recommendations": [
+      "Phase MFA enforcement gradually",
+      "Review risk-based policies",
+      "Discover service accounts first"
+    ]
+  },
+  {
+    "name": "Authomize AI",
+    "slug": "authomize-ai",
+    "category": "Security",
+    "description": "AI-powered identity threat detection platform that provides visibility into identity-based attacks and access risks.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=authomize.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Identity graph depth",
+      "Access pattern analysis",
+      "Privilege escalation detection"
+    ],
+    "recommendations": [
+      "Review identity risk findings",
+      "Monitor access anomalies",
+      "Audit integration connections"
+    ]
+  },
+  {
+    "name": "Astrix Security",
+    "slug": "astrix-security",
+    "category": "Security",
+    "description": "AI-powered non-human identity security platform that manages and secures service accounts, API keys, and tokens.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=astrix.security&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Non-human identity discovery",
+      "Token and key visibility",
+      "Integration lifecycle tracking"
+    ],
+    "recommendations": [
+      "Inventory all NHIs",
+      "Review overprivileged tokens",
+      "Configure rotation policies"
+    ]
+  },
+  {
+    "name": "Rookout AI",
+    "slug": "rookout-ai",
+    "category": "DevOps",
+    "description": "AI-powered live debugging platform that collects production data without code changes or restarts.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=rookout.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Session-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Production data access",
+      "Variable snapshot sensitivity",
+      "Agent-level code visibility"
+    ],
+    "recommendations": [
+      "Restrict breakpoint locations",
+      "Mask sensitive variables",
+      "Limit user access scopes"
+    ]
+  },
+  {
+    "name": "Lightrun AI",
+    "slug": "lightrun-ai",
+    "category": "DevOps",
+    "description": "AI-powered developer observability platform for adding logs, metrics, and traces to production in real-time.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=lightrun.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Session-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Runtime code instrumentation",
+      "Production data exposure",
+      "Agent performance impact"
+    ],
+    "recommendations": [
+      "Use PII redaction",
+      "Set CPU usage limits",
+      "Review action audit logs"
+    ]
+  },
+  {
+    "name": "Granulate AI",
+    "slug": "granulate-ai",
+    "category": "DevOps",
+    "description": "AI-powered continuous workload optimization platform that autonomously improves application performance.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=granulate.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Kernel-level optimization",
+      "Workload profiling data",
+      "Autonomous tuning actions"
+    ],
+    "recommendations": [
+      "Start with profiling only",
+      "Review optimization reports",
+      "Set guardrails on tuning"
+    ]
+  },
+  {
+    "name": "Incredibuild AI",
+    "slug": "incredibuild-ai",
+    "category": "DevOps",
+    "description": "AI-powered build acceleration platform that distributes and parallelizes compilation across available resources.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=incredibuild.com&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Build lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Build artifact distribution",
+      "Network resource sharing",
+      "Compilation cache data"
+    ],
+    "recommendations": [
+      "Isolate build networks",
+      "Restrict agent enrollment",
+      "Monitor resource usage"
+    ]
+  },
+  {
+    "name": "Trunk AI",
+    "slug": "trunk-ai",
+    "category": "DevOps",
+    "description": "AI-powered developer experience platform with intelligent code quality checks and merge queue management.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=trunk.io&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Code analysis telemetry",
+      "CI integration scope",
+      "Merge queue configuration"
+    ],
+    "recommendations": [
+      "Review linter configurations",
+      "Restrict merge queue access",
+      "Audit CI integration tokens"
+    ]
+  },
+  {
+    "name": "Telepresence AI",
+    "slug": "telepresence-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced remote Kubernetes development tool that bridges local development with cluster services.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=telepresence.io&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Session-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cluster network access",
+      "Traffic intercept scope",
+      "Local credential exposure"
+    ],
+    "recommendations": [
+      "Restrict intercept namespaces",
+      "Use personal intercepts only",
+      "Audit traffic manager access"
+    ]
+  },
+  {
+    "name": "Gefyra AI",
+    "slug": "gefyra-ai",
+    "category": "DevOps",
+    "description": "AI-powered local Kubernetes development tool that connects local containers to remote cluster resources.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=gefyra.dev&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "Self-hosted",
+      "retention": "Session-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cluster network bridging",
+      "Container intercept access",
+      "Cargo daemon permissions"
+    ],
+    "recommendations": [
+      "Restrict bridge namespaces",
+      "Use dedicated service accounts",
+      "Monitor bridge connections"
+    ]
+  },
+  {
+    "name": "Garden AI",
+    "slug": "garden-ai",
+    "category": "DevOps",
+    "description": "AI-powered developer platform that automates environment provisioning and testing for Kubernetes workloads.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=garden.io&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers or self-hosted",
+      "retention": "Project lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Cluster provisioning access",
+      "Build cache data",
+      "Secret management scope"
+    ],
+    "recommendations": [
+      "Use remote clusters cautiously",
+      "Restrict provider permissions",
+      "Audit action logs"
+    ]
+  },
+  {
+    "name": "Skaffold AI",
+    "slug": "skaffold-ai",
+    "category": "DevOps",
+    "description": "AI-enhanced continuous development tool by Google that automates building, pushing, and deploying to Kubernetes.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=skaffold.dev&sz=128",
+    "riskScore": 3,
+    "dataHandling": {
+      "storage": "Local",
+      "retention": "Session-based",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": false,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Kubeconfig access",
+      "Registry credential usage",
+      "Build context sensitivity"
+    ],
+    "recommendations": [
+      "Use namespace isolation",
+      "Restrict registry access",
+      "Review skaffold.yaml configs"
+    ]
+  },
+  {
+    "name": "Protect AI",
+    "slug": "protect-ai",
+    "category": "Security",
+    "description": "AI-powered ML security platform that identifies and mitigates risks across the machine learning lifecycle.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=protectai.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "ML model access",
+      "Training data sensitivity",
+      "Model supply chain risks"
+    ],
+    "recommendations": [
+      "Scan model artifacts",
+      "Review dependency audits",
+      "Monitor model registries"
+    ]
+  },
+  {
+    "name": "HiddenLayer AI",
+    "slug": "hiddenlayer-ai",
+    "category": "Security",
+    "description": "AI-powered machine learning security platform that detects adversarial attacks on ML models.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=hiddenlayer.com&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Continuous",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Model inference monitoring",
+      "Adversarial detection accuracy",
+      "Integration API scope"
+    ],
+    "recommendations": [
+      "Monitor model endpoints",
+      "Review detection alerts",
+      "Test adversarial resilience"
+    ]
+  },
+  {
+    "name": "Robust Intelligence AI",
+    "slug": "robust-intelligence-ai",
+    "category": "Security",
+    "description": "AI-powered model validation platform that continuously tests ML models for vulnerabilities and failures.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=robustintelligence.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Test lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Model testing data access",
+      "Validation result sensitivity",
+      "CI/CD integration scope"
+    ],
+    "recommendations": [
+      "Integrate in ML pipelines",
+      "Review stress test results",
+      "Configure risk thresholds"
+    ]
+  },
+  {
+    "name": "CalypsoAI",
+    "slug": "calypsoai",
+    "category": "Security",
+    "description": "AI security platform providing model validation, observability, and governance for enterprise AI deployments.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=calypsoai.com&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Audit lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "LLM traffic inspection",
+      "Prompt data sensitivity",
+      "Model governance scope"
+    ],
+    "recommendations": [
+      "Configure content filters",
+      "Review audit logs",
+      "Define model usage policies"
+    ]
+  },
+  {
+    "name": "Cranium AI",
+    "slug": "cranium-ai",
+    "category": "Security",
+    "description": "AI-powered security platform that maps AI attack surfaces and validates AI system security posture.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=cranium.ai&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Assessment lifetime",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "AI system mapping depth",
+      "Model inventory exposure",
+      "Risk assessment data"
+    ],
+    "recommendations": [
+      "Complete AI inventory",
+      "Review attack surface maps",
+      "Prioritize critical AI systems"
+    ]
+  },
+  {
+    "name": "Lasso Security",
+    "slug": "lasso-security",
+    "category": "Security",
+    "description": "AI-powered LLM security platform that protects enterprise generative AI applications from prompt injection and data leaks.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=lasso.security&sz=128",
+    "riskScore": 5,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "30 days",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "LLM traffic monitoring",
+      "Prompt content sensitivity",
+      "Shadow AI detection scope"
+    ],
+    "recommendations": [
+      "Monitor all LLM endpoints",
+      "Configure content policies",
+      "Discover shadow AI usage"
+    ]
+  },
+  {
+    "name": "Lakera AI",
+    "slug": "lakera-ai",
+    "category": "Security",
+    "description": "AI-powered LLM security platform that protects AI applications from prompt injection and harmful content.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=lakera.ai&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "EU servers",
+      "retention": "Transient",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "Prompt inspection scope",
+      "Content filtering accuracy",
+      "API gateway latency"
+    ],
+    "recommendations": [
+      "Deploy as API gateway",
+      "Tune detection thresholds",
+      "Monitor false positive rates"
+    ]
+  },
+  {
+    "name": "Pangea Security AI",
+    "slug": "pangea-security-ai",
+    "category": "Security",
+    "description": "AI-powered security infrastructure platform providing embeddable security services for AI applications.",
+    "logoUrl": "https://www.google.com/s2/favicons?domain=pangea.cloud&sz=128",
+    "riskScore": 4,
+    "dataHandling": {
+      "storage": "US servers",
+      "retention": "Service-dependent",
+      "training": "No"
+    },
+    "compliance": {
+      "soc2": true,
+      "gdpr": true,
+      "hipaa": false
+    },
+    "riskFactors": [
+      "API service integration depth",
+      "Data redaction scope",
+      "Audit log volume"
+    ],
+    "recommendations": [
+      "Use redact for PII",
+      "Configure AI guard policies",
+      "Review audit trail"
+    ]
+  }
+]

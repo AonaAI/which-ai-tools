@@ -1,11 +1,16 @@
 'use client';
 
-import { useState } from 'react';
-import { tools, getRiskLevel, getRiskColor } from '@/data/tools';
+import { useState, useEffect } from 'react';
+import { tools as staticTools, fetchTools, getRiskLevel, getRiskColor } from '@/data/tools';
 import Link from 'next/link';
 
 export default function ComparePage() {
+  const [tools, setTools] = useState(staticTools);
   const [selectedTools, setSelectedTools] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetchTools().then(setTools);
+  }, []);
 
   const toggleTool = (slug: string) => {
     if (selectedTools.includes(slug)) {
@@ -19,10 +24,10 @@ export default function ComparePage() {
 
   return (
     <main className="min-h-screen">
-      <section className="bg-brand-darker border-b border-brand-dark">
+      <section className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Compare AI Tools</h1>
-          <p className="text-xl text-gray-300">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Compare AI Tools</h1>
+          <p className="text-xl text-gray-600">
             Select up to 3 tools to compare their risk profiles, compliance, and data handling
           </p>
         </div>
@@ -31,7 +36,7 @@ export default function ComparePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Tool Selection */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">
+          <h2 className="text-2xl font-bold mb-6 text-gray-900">
             Select Tools ({selectedTools.length}/3)
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -46,15 +51,15 @@ export default function ComparePage() {
                   disabled={isDisabled}
                   className={`p-4 rounded-lg border-2 transition text-left ${
                     isSelected
-                      ? 'border-brand-accent bg-brand-accent/20'
+                      ? 'border-brand-accent bg-emerald-50'
                       : isDisabled
-                      ? 'border-brand-dark bg-brand-darker/50 opacity-50 cursor-not-allowed'
-                      : 'border-brand-dark bg-brand-darker hover:border-brand-accent'
+                      ? 'border-gray-200 bg-gray-50 opacity-50 cursor-not-allowed'
+                      : 'border-gray-200 bg-white hover:border-brand-accent'
                   }`}
                 >
-                  <div className="font-bold text-white text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-gray-400">{tool.category}</div>
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="font-bold text-gray-900 text-sm mb-1">{tool.name}</div>
+                  <div className="text-xs text-gray-500">{tool.category}</div>
+                  <div className="text-xs text-gray-400 mt-1">
                     Risk: {tool.riskScore}/10
                   </div>
                 </button>
@@ -67,16 +72,16 @@ export default function ComparePage() {
         {comparedTools.length > 0 ? (
           <section className="overflow-x-auto">
             <div className="inline-block min-w-full align-middle">
-              <table className="min-w-full bg-brand-darker border border-brand-dark rounded-lg overflow-hidden">
+              <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
                 <thead>
-                  <tr className="border-b border-brand-dark">
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300 w-48">
+                  <tr className="border-b border-gray-200 bg-gray-50">
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600 w-48">
                       Criteria
                     </th>
                     {comparedTools.map(tool => (
                       <th
                         key={tool.slug}
-                        className="px-6 py-4 text-left text-sm font-semibold text-white border-l border-brand-dark"
+                        className="px-6 py-4 text-left text-sm font-semibold text-gray-900 border-l border-gray-200"
                       >
                         <div className="mb-2">{tool.name}</div>
                         <Link
@@ -89,12 +94,12 @@ export default function ComparePage() {
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-brand-dark">
+                <tbody className="divide-y divide-gray-200">
                   {/* Category */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300">Category</td>
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600">Category</td>
                     {comparedTools.map(tool => (
-                      <td key={tool.slug} className="px-6 py-4 text-sm text-white border-l border-brand-dark">
+                      <td key={tool.slug} className="px-6 py-4 text-sm text-gray-900 border-l border-gray-200">
                         {tool.category}
                       </td>
                     ))}
@@ -102,14 +107,14 @@ export default function ComparePage() {
 
                   {/* Risk Score */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300">Risk Score</td>
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600">Risk Score</td>
                     {comparedTools.map(tool => {
                       const riskLevel = getRiskLevel(tool.riskScore);
                       const riskColor = getRiskColor(tool.riskScore);
                       return (
-                        <td key={tool.slug} className="px-6 py-4 border-l border-brand-dark">
+                        <td key={tool.slug} className="px-6 py-4 border-l border-gray-200">
                           <div className="flex items-center gap-3">
-                            <span className="text-2xl font-bold text-white">
+                            <span className="text-2xl font-bold text-gray-900">
                               {tool.riskScore}/10
                             </span>
                             <span className={`${riskColor} text-white text-xs font-bold px-3 py-1 rounded-full`}>
@@ -123,10 +128,10 @@ export default function ComparePage() {
 
                   {/* SOC 2 */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300">SOC 2 Certified</td>
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600">SOC 2 Certified</td>
                     {comparedTools.map(tool => (
-                      <td key={tool.slug} className="px-6 py-4 text-sm border-l border-brand-dark">
-                        <span className={tool.compliance.soc2 ? 'text-green-400' : 'text-red-400'}>
+                      <td key={tool.slug} className="px-6 py-4 text-sm border-l border-gray-200">
+                        <span className={tool.compliance.soc2 ? 'text-green-600' : 'text-red-500'}>
                           {tool.compliance.soc2 ? '✓ Yes' : '✗ No'}
                         </span>
                       </td>
@@ -135,10 +140,10 @@ export default function ComparePage() {
 
                   {/* GDPR */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300">GDPR Compliant</td>
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600">GDPR Compliant</td>
                     {comparedTools.map(tool => (
-                      <td key={tool.slug} className="px-6 py-4 text-sm border-l border-brand-dark">
-                        <span className={tool.compliance.gdpr ? 'text-green-400' : 'text-red-400'}>
+                      <td key={tool.slug} className="px-6 py-4 text-sm border-l border-gray-200">
+                        <span className={tool.compliance.gdpr ? 'text-green-600' : 'text-red-500'}>
                           {tool.compliance.gdpr ? '✓ Yes' : '✗ No'}
                         </span>
                       </td>
@@ -147,10 +152,10 @@ export default function ComparePage() {
 
                   {/* HIPAA */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300">HIPAA Compliant</td>
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600">HIPAA Compliant</td>
                     {comparedTools.map(tool => (
-                      <td key={tool.slug} className="px-6 py-4 text-sm border-l border-brand-dark">
-                        <span className={tool.compliance.hipaa ? 'text-green-400' : 'text-red-400'}>
+                      <td key={tool.slug} className="px-6 py-4 text-sm border-l border-gray-200">
+                        <span className={tool.compliance.hipaa ? 'text-green-600' : 'text-red-500'}>
                           {tool.compliance.hipaa ? '✓ Yes' : '✗ No'}
                         </span>
                       </td>
@@ -159,9 +164,9 @@ export default function ComparePage() {
 
                   {/* Storage */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300">Data Storage</td>
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600">Data Storage</td>
                     {comparedTools.map(tool => (
-                      <td key={tool.slug} className="px-6 py-4 text-sm text-white border-l border-brand-dark">
+                      <td key={tool.slug} className="px-6 py-4 text-sm text-gray-900 border-l border-gray-200">
                         {tool.dataHandling.storage}
                       </td>
                     ))}
@@ -169,9 +174,9 @@ export default function ComparePage() {
 
                   {/* Retention */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300">Retention Policy</td>
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600">Retention Policy</td>
                     {comparedTools.map(tool => (
-                      <td key={tool.slug} className="px-6 py-4 text-sm text-white border-l border-brand-dark">
+                      <td key={tool.slug} className="px-6 py-4 text-sm text-gray-900 border-l border-gray-200">
                         {tool.dataHandling.retention}
                       </td>
                     ))}
@@ -179,9 +184,9 @@ export default function ComparePage() {
 
                   {/* Training */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300">Training on Data</td>
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600">Training on Data</td>
                     {comparedTools.map(tool => (
-                      <td key={tool.slug} className="px-6 py-4 text-sm text-white border-l border-brand-dark">
+                      <td key={tool.slug} className="px-6 py-4 text-sm text-gray-900 border-l border-gray-200">
                         {tool.dataHandling.training}
                       </td>
                     ))}
@@ -189,16 +194,16 @@ export default function ComparePage() {
 
                   {/* Risk Factors */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300 align-top">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600 align-top">
                       Risk Factors
                     </td>
                     {comparedTools.map(tool => (
-                      <td key={tool.slug} className="px-6 py-4 text-sm text-white border-l border-brand-dark">
+                      <td key={tool.slug} className="px-6 py-4 text-sm text-gray-900 border-l border-gray-200">
                         <ul className="space-y-2">
                           {tool.riskFactors.map((factor, index) => (
                             <li key={index} className="flex items-start gap-2">
-                              <span className="text-red-400 mt-0.5">⚠</span>
-                              <span className="text-gray-300">{factor}</span>
+                              <span className="text-red-500 mt-0.5">⚠</span>
+                              <span className="text-gray-600">{factor}</span>
                             </li>
                           ))}
                         </ul>
@@ -208,16 +213,16 @@ export default function ComparePage() {
 
                   {/* Recommendations */}
                   <tr>
-                    <td className="px-6 py-4 text-sm font-medium text-gray-300 align-top">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-600 align-top">
                       Recommendations
                     </td>
                     {comparedTools.map(tool => (
-                      <td key={tool.slug} className="px-6 py-4 text-sm text-white border-l border-brand-dark">
+                      <td key={tool.slug} className="px-6 py-4 text-sm text-gray-900 border-l border-gray-200">
                         <ul className="space-y-2">
                           {tool.recommendations.map((rec, index) => (
                             <li key={index} className="flex items-start gap-2">
-                              <span className="text-green-400 mt-0.5">✓</span>
-                              <span className="text-gray-300">{rec}</span>
+                              <span className="text-green-600 mt-0.5">✓</span>
+                              <span className="text-gray-600">{rec}</span>
                             </li>
                           ))}
                         </ul>
@@ -229,8 +234,8 @@ export default function ComparePage() {
             </div>
           </section>
         ) : (
-          <div className="text-center py-12 bg-brand-darker border border-brand-dark rounded-lg">
-            <p className="text-gray-400 text-lg">
+          <div className="text-center py-12 bg-white border border-gray-200 rounded-lg shadow-sm">
+            <p className="text-gray-500 text-lg">
               Select tools above to start comparing
             </p>
           </div>
@@ -242,20 +247,20 @@ export default function ComparePage() {
             <div
               className="rounded-2xl p-12 text-center"
               style={{
-                background: 'linear-gradient(135deg, #2d1054 0%, #6412A6 100%)',
+                background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)',
               }}
             >
-              <h2 className="text-3xl font-bold mb-4">
+              <h2 className="text-3xl font-bold mb-4 text-white">
                 Manage All Your AI Tools in One Place
               </h2>
-              <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
                 Automatically discover, monitor, and control AI tool usage across your organization
               </p>
               <a
                 href="https://aona.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-white text-brand-accent px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition"
+                className="inline-block bg-white text-emerald-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition"
               >
                 Learn More About Aona AI
               </a>

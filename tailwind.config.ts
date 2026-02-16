@@ -10,14 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          darkest: '#11021d',
-          darker: '#1a0533',
-          dark: '#2d1054',
-          accent: '#6412A6',
+          darkest: '#f8fafb',
+          darker: '#ffffff',
+          dark: '#e5e7eb',
+          accent: '#10b981',
         },
       },
       fontFamily: {
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
       },
     },
   },

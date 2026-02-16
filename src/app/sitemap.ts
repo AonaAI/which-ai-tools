@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
-import { tools } from '@/data/tools';
+import { fetchTools } from '@/data/tools';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://whichaitools.com';
+  const tools = await fetchTools();
 
   const toolPages = tools.map(tool => ({
     url: `${baseUrl}/tools/${tool.slug}/`,
