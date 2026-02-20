@@ -22,6 +22,13 @@ interface ToolRow {
   compliance_hipaa: boolean;
   risk_factors: string[];
   recommendations: string[];
+  // Optional extended fields
+  website_url?: string;
+  pricing?: string;
+  features?: string[];
+  tags?: string[];
+  long_description?: string;
+  last_updated?: string;
 }
 
 const EMPTY_TOOL: ToolRow = {
@@ -39,6 +46,12 @@ const EMPTY_TOOL: ToolRow = {
   compliance_hipaa: false,
   risk_factors: [''],
   recommendations: [''],
+  website_url: '',
+  pricing: '',
+  features: [''],
+  tags: [''],
+  long_description: '',
+  last_updated: '',
 };
 
 const CATEGORIES = [
@@ -47,6 +60,8 @@ const CATEGORIES = [
   'Research', 'Education', 'Healthcare', 'Legal', 'Finance', 'HR',
   'Customer Support', 'Sales', 'Translation', 'Other',
 ];
+
+const PRICING_OPTIONS = ['', 'Free', 'Freemium', 'Paid', 'Enterprise', 'Contact Sales'];
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -62,6 +77,11 @@ export default function AdminPage() {
   const [search, setSearch] = useState('');
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
+  const [showBulkImport, setShowBulkImport] = useState(false);
+  const [bulkJson, setBulkJson] = useState('');
+  const [bulkPreview, setBulkPreview] = useState<ToolRow[] | null>(null);
+  const [bulkError, setBulkError] = useState('');
+  const [bulkImporting, setBulkImporting] = useState(false);
 
   const fetchTools = useCallback(async () => {
     setLoading(true);
@@ -117,6 +137,12 @@ export default function AdminPage() {
       compliance_hipaa: editingTool.compliance_hipaa,
       risk_factors: editingTool.risk_factors.filter(f => f.trim()),
       recommendations: editingTool.recommendations.filter(r => r.trim()),
+      website_url: editingTool.website_url || null,
+      pricing: editingTool.pricing || null,
+      features: (editingTool.features || []).filter(f => f.trim()),
+      tags: (editingTool.tags || []).filter(t => t.trim()),
+      long_description: editingTool.long_description || null,
+      last_updated: editingTool.last_updated || null,
     };
 
     if (isNew) {
@@ -143,6 +169,73 @@ export default function AdminPage() {
     fetchTools();
   };
 
+  const handleBulkParse = () => {
+    setBulkError('');
+    setBulkPreview(null);
+    try {
+      const parsed = JSON.parse(bulkJson);
+      if (!Array.isArray(parsed)) {
+        setBulkError('JSON must be an array of tool objects.');
+        return;
+      }
+      const validated: ToolRow[] = parsed.map((item: Record<string, unknown>, i: number) => {
+        if (!item.name) throw new Error(`Item ${i + 1}: missing required field "name"`);
+        return {
+          name: String(item.name),
+          slug: String(item.slug || slugify(String(item.name))),
+          category: String(item.category || 'Other'),
+          description: String(item.description || ''),
+          logo_url: String(item.logo_url || `https://www.google.com/s2/favicons?domain=${slugify(String(item.name))}.com&sz=128`),
+          risk_score: Number(item.risk_score ?? 5),
+          data_handling_storage: String(item.data_handling_storage || ''),
+          data_handling_retention: String(item.data_handling_retention || ''),
+          data_handling_training: String(item.data_handling_training || ''),
+          compliance_soc2: Boolean(item.compliance_soc2 ?? false),
+          compliance_gdpr: Boolean(item.compliance_gdpr ?? false),
+          compliance_hipaa: Boolean(item.compliance_hipaa ?? false),
+          risk_factors: Array.isArray(item.risk_factors) ? item.risk_factors.map(String) : [],
+          recommendations: Array.isArray(item.recommendations) ? item.recommendations.map(String) : [],
+          website_url: item.website_url ? String(item.website_url) : undefined,
+          pricing: item.pricing ? String(item.pricing) : undefined,
+          features: Array.isArray(item.features) ? item.features.map(String) : [],
+          tags: Array.isArray(item.tags) ? item.tags.map(String) : [],
+          long_description: item.long_description ? String(item.long_description) : undefined,
+          last_updated: item.last_updated ? String(item.last_updated) : undefined,
+        };
+      });
+      setBulkPreview(validated);
+    } catch (err) {
+      setBulkError(err instanceof Error ? err.message : 'Invalid JSON');
+    }
+  };
+
+  const handleBulkImport = async () => {
+    if (!bulkPreview || bulkPreview.length === 0) return;
+    setBulkImporting(true);
+    setMessage('');
+    let successCount = 0;
+    let errorCount = 0;
+
+    for (const tool of bulkPreview) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { id: _id, ...payload } = tool;
+      const { error } = await supabase.from('ai_tools').insert(payload);
+      if (error) {
+        console.error(`Failed to import ${tool.name}:`, error.message);
+        errorCount++;
+      } else {
+        successCount++;
+      }
+    }
+
+    setBulkImporting(false);
+    setBulkPreview(null);
+    setBulkJson('');
+    setShowBulkImport(false);
+    setMessage(`Bulk import complete: ${successCount} added, ${errorCount} failed.`);
+    fetchTools();
+  };
+
   const filteredTools = tools.filter(t =>
     t.name.toLowerCase().includes(search.toLowerCase()) ||
     t.category.toLowerCase().includes(search.toLowerCase())
@@ -165,6 +258,109 @@ export default function AdminPage() {
           </button>
           {message && <p className="text-red-500 mt-3 text-sm">{message}</p>}
         </form>
+      </main>
+    );
+  }
+
+  if (showBulkImport) {
+    return (
+      <main className="min-h-screen bg-gray-50 py-8">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="flex items-center justify-between mb-6">
+            <h1 className="text-2xl font-bold text-gray-900">Bulk Import Tools</h1>
+            <button onClick={() => { setShowBulkImport(false); setBulkPreview(null); setBulkError(''); setBulkJson(''); }} className="text-gray-500 hover:text-gray-700">
+              ← Back to list
+            </button>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 space-y-4">
+            <p className="text-gray-600 text-sm">
+              Paste a JSON array of tool objects. Required field: <code className="bg-gray-100 px-1 rounded">name</code>.
+              All other fields are optional and will use sensible defaults.
+            </p>
+            <details className="text-sm text-gray-500">
+              <summary className="cursor-pointer font-semibold text-gray-700 mb-2">View expected format</summary>
+              <pre className="bg-gray-50 rounded p-3 overflow-x-auto text-xs mt-2">{`[
+  {
+    "name": "My AI Tool",
+    "slug": "my-ai-tool",
+    "category": "Chatbots",
+    "description": "Short description",
+    "logo_url": "https://...",
+    "risk_score": 5,
+    "data_handling_storage": "US cloud",
+    "data_handling_retention": "30 days",
+    "data_handling_training": "Opt-out available",
+    "compliance_soc2": true,
+    "compliance_gdpr": true,
+    "compliance_hipaa": false,
+    "risk_factors": ["Factor 1", "Factor 2"],
+    "recommendations": ["Rec 1", "Rec 2"],
+    "website_url": "https://example.com",
+    "pricing": "Freemium",
+    "features": ["Feature 1", "Feature 2"],
+    "tags": ["tag1", "tag2"],
+    "long_description": "Longer SEO description...",
+    "last_updated": "2026-02-21"
+  }
+]`}</pre>
+            </details>
+
+            <textarea
+              rows={12}
+              value={bulkJson}
+              onChange={e => { setBulkJson(e.target.value); setBulkPreview(null); setBulkError(''); }}
+              placeholder='[{"name": "Tool Name", "category": "Chatbots", ...}]'
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-900 font-mono text-sm"
+            />
+
+            {bulkError && <p className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">{bulkError}</p>}
+
+            <div className="flex gap-3">
+              <button
+                onClick={handleBulkParse}
+                disabled={!bulkJson.trim()}
+                className="bg-gray-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800 transition disabled:opacity-50"
+              >
+                Parse &amp; Preview
+              </button>
+              {bulkPreview && (
+                <button
+                  onClick={handleBulkImport}
+                  disabled={bulkImporting}
+                  className="bg-brand-accent text-white px-6 py-2 rounded-lg font-bold hover:bg-emerald-600 transition disabled:opacity-50"
+                >
+                  {bulkImporting ? 'Importing...' : `Import ${bulkPreview.length} Tool${bulkPreview.length !== 1 ? 's' : ''}`}
+                </button>
+              )}
+            </div>
+
+            {bulkPreview && (
+              <div>
+                <p className="font-semibold text-gray-700 mb-3">{bulkPreview.length} tool{bulkPreview.length !== 1 ? 's' : ''} ready to import:</p>
+                <div className="bg-gray-50 rounded-lg border border-gray-200 divide-y divide-gray-100 max-h-96 overflow-y-auto">
+                  {bulkPreview.map((t, i) => (
+                    <div key={i} className="px-4 py-3 flex items-center justify-between">
+                      <div>
+                        <span className="font-medium text-gray-900">{t.name}</span>
+                        <span className="text-gray-400 text-sm ml-2">/{t.slug}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-gray-500">{t.category}</span>
+                        <span className={`text-xs font-bold px-2 py-0.5 rounded-full text-white ${
+                          t.risk_score <= 3 ? 'bg-green-500' :
+                          t.risk_score <= 5 ? 'bg-yellow-500' :
+                          t.risk_score <= 7 ? 'bg-orange-500' : 'bg-red-500'
+                        }`}>{t.risk_score}/10</span>
+                        {t.pricing && <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{t.pricing}</span>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </main>
     );
   }
@@ -236,12 +432,55 @@ export default function AdminPage() {
             </div>
 
             <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Long Description (SEO)</label>
+              <textarea
+                rows={4}
+                value={editingTool.long_description || ''}
+                onChange={e => setEditingTool({ ...editingTool, long_description: e.target.value })}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-900"
+                placeholder="Detailed description for the tool page and SEO..."
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Website URL</label>
+                <input
+                  value={editingTool.website_url || ''}
+                  onChange={e => setEditingTool({ ...editingTool, website_url: e.target.value })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-900"
+                  placeholder="https://example.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Pricing</label>
+                <select
+                  value={editingTool.pricing || ''}
+                  onChange={e => setEditingTool({ ...editingTool, pricing: e.target.value })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-900"
+                >
+                  {PRICING_OPTIONS.map(p => <option key={p} value={p}>{p || '— Select —'}</option>)}
+                </select>
+              </div>
+            </div>
+
+            <div>
               <label className="block text-sm font-semibold text-gray-700 mb-1">Logo URL</label>
               <input
                 value={editingTool.logo_url}
                 onChange={e => setEditingTool({ ...editingTool, logo_url: e.target.value })}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-900"
                 placeholder="https://www.google.com/s2/favicons?domain=example.com&sz=128"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Last Updated (ISO date)</label>
+              <input
+                type="date"
+                value={editingTool.last_updated || ''}
+                onChange={e => setEditingTool({ ...editingTool, last_updated: e.target.value })}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-900"
               />
             </div>
 
@@ -277,6 +516,50 @@ export default function AdminPage() {
                 </label>
               ))}
             </div>
+
+            {/* Features */}
+            <h2 className="text-lg font-bold text-gray-900 pt-2">Key Features</h2>
+            {(editingTool.features || ['']).map((f, i) => (
+              <div key={i} className="flex gap-2">
+                <input
+                  value={f}
+                  onChange={e => {
+                    const updated = [...(editingTool.features || [''])];
+                    updated[i] = e.target.value;
+                    setEditingTool({ ...editingTool, features: updated });
+                  }}
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-gray-900"
+                  placeholder="Feature..."
+                />
+                <button onClick={() => {
+                  const updated = (editingTool.features || ['']).filter((_, j) => j !== i);
+                  setEditingTool({ ...editingTool, features: updated.length ? updated : [''] });
+                }} className="text-red-500 px-2">✕</button>
+              </div>
+            ))}
+            <button onClick={() => setEditingTool({ ...editingTool, features: [...(editingTool.features || []), ''] })} className="text-brand-accent text-sm font-semibold">+ Add feature</button>
+
+            {/* Tags */}
+            <h2 className="text-lg font-bold text-gray-900 pt-2">Tags</h2>
+            {(editingTool.tags || ['']).map((tag, i) => (
+              <div key={i} className="flex gap-2">
+                <input
+                  value={tag}
+                  onChange={e => {
+                    const updated = [...(editingTool.tags || [''])];
+                    updated[i] = e.target.value;
+                    setEditingTool({ ...editingTool, tags: updated });
+                  }}
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-gray-900"
+                  placeholder="tag..."
+                />
+                <button onClick={() => {
+                  const updated = (editingTool.tags || ['']).filter((_, j) => j !== i);
+                  setEditingTool({ ...editingTool, tags: updated.length ? updated : [''] });
+                }} className="text-red-500 px-2">✕</button>
+              </div>
+            ))}
+            <button onClick={() => setEditingTool({ ...editingTool, tags: [...(editingTool.tags || []), ''] })} className="text-brand-accent text-sm font-semibold">+ Add tag</button>
 
             {/* Risk Factors */}
             <h2 className="text-lg font-bold text-gray-900 pt-2">Risk Factors</h2>
@@ -354,6 +637,12 @@ export default function AdminPage() {
               View Site →
             </Link>
             <button
+              onClick={() => { setShowBulkImport(true); setMessage(''); }}
+              className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition font-semibold"
+            >
+              Bulk Import
+            </button>
+            <button
               onClick={() => { setEditingTool({ ...EMPTY_TOOL }); setIsNew(true); setMessage(''); }}
               className="bg-brand-accent text-white px-6 py-2 rounded-lg font-bold hover:bg-emerald-600 transition"
             >
@@ -384,6 +673,7 @@ export default function AdminPage() {
                   <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700">Name</th>
                   <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700">Category</th>
                   <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700">Risk</th>
+                  <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700">Pricing</th>
                   <th className="text-left px-4 py-3 text-sm font-semibold text-gray-700">Compliance</th>
                   <th className="text-right px-4 py-3 text-sm font-semibold text-gray-700">Actions</th>
                 </tr>
@@ -406,6 +696,11 @@ export default function AdminPage() {
                       </span>
                     </td>
                     <td className="px-4 py-3">
+                      {tool.pricing && (
+                        <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{tool.pricing}</span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3">
                       <div className="flex gap-1">
                         {tool.compliance_soc2 && <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">SOC2</span>}
                         {tool.compliance_gdpr && <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">GDPR</span>}
@@ -414,7 +709,17 @@ export default function AdminPage() {
                     </td>
                     <td className="px-4 py-3 text-right">
                       <button
-                        onClick={() => { setEditingTool({ ...tool, risk_factors: tool.risk_factors || [''], recommendations: tool.recommendations || [''] }); setIsNew(false); setMessage(''); }}
+                        onClick={() => {
+                          setEditingTool({
+                            ...tool,
+                            risk_factors: tool.risk_factors?.length ? tool.risk_factors : [''],
+                            recommendations: tool.recommendations?.length ? tool.recommendations : [''],
+                            features: tool.features?.length ? tool.features : [''],
+                            tags: tool.tags?.length ? tool.tags : [''],
+                          });
+                          setIsNew(false);
+                          setMessage('');
+                        }}
                         className="text-brand-accent hover:underline text-sm mr-3"
                       >
                         Edit

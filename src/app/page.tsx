@@ -1,12 +1,20 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { tools as staticTools, fetchTools, getCategories, getCategoriesFromTools, getRiskLevel, getRiskColor, type Category, type RiskLevel } from '@/data/tools';
+import { tools as staticTools, fetchTools, getCategories, getCategoriesFromTools, getRiskLevel, getRiskColor, type AITool, type Category, type RiskLevel } from '@/data/tools';
+
+const PRICING_COLORS: Record<string, string> = {
+  Free: 'bg-green-100 text-green-700',
+  Freemium: 'bg-blue-100 text-blue-700',
+  Paid: 'bg-orange-100 text-orange-700',
+  Enterprise: 'bg-purple-100 text-purple-700',
+  'Contact Sales': 'bg-gray-100 text-gray-700',
+};
 import Link from 'next/link';
 import ToolLogo from '@/components/ToolLogo';
 
 export default function Home() {
-  const [allTools, setAllTools] = useState(staticTools);
+  const [allTools, setAllTools] = useState<AITool[]>(staticTools);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('All');
   const [selectedRisk, setSelectedRisk] = useState<RiskLevel | 'All'>('All');
@@ -169,8 +177,15 @@ export default function Home() {
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <div className="text-sm text-gray-500">
-                    Risk Score: <span className="font-bold text-gray-900">{tool.riskScore}/10</span>
+                  <div className="flex items-center gap-2">
+                    <div className="text-sm text-gray-500">
+                      Risk: <span className="font-bold text-gray-900">{tool.riskScore}/10</span>
+                    </div>
+                    {tool.pricing && (
+                      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${PRICING_COLORS[tool.pricing] || 'bg-gray-100 text-gray-600'}`}>
+                        {tool.pricing}
+                      </span>
+                    )}
                   </div>
                   <div className="flex gap-2">
                     {tool.compliance.soc2 && (

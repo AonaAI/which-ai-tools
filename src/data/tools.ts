@@ -20,6 +20,13 @@ export interface AITool {
   };
   riskFactors: string[];
   recommendations: string[];
+  // Optional extended fields
+  websiteUrl?: string;
+  pricing?: string;
+  features?: string[];
+  tags?: string[];
+  longDescription?: string;
+  lastUpdated?: string;
 }
 
 export const tools: AITool[] = [
@@ -1502,6 +1509,13 @@ interface AIToolRow {
   recommendations: string[];
   created_at: string;
   updated_at: string;
+  // Optional extended fields
+  website_url?: string;
+  pricing?: string;
+  features?: string[];
+  tags?: string[];
+  long_description?: string;
+  last_updated?: string;
 }
 
 function mapRowToTool(row: AIToolRow): AITool {
@@ -1524,6 +1538,12 @@ function mapRowToTool(row: AIToolRow): AITool {
     },
     riskFactors: row.risk_factors || [],
     recommendations: row.recommendations || [],
+    websiteUrl: row.website_url,
+    pricing: row.pricing,
+    features: row.features || [],
+    tags: row.tags || [],
+    longDescription: row.long_description,
+    lastUpdated: row.last_updated,
   };
 }
 

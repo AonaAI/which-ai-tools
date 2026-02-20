@@ -54,20 +54,44 @@ npm run build
 # The static site will be generated in the out/ directory
 ```
 
-## Deployment
+## Deployment to aitoolrisk.com
 
-Deploy to Firebase Hosting:
+### Prerequisites
+- Node.js 18+
+- Firebase CLI: `npm install -g firebase-tools`
+- Firebase project configured for aitoolrisk.com
+
+### Steps
 
 ```bash
-# Install Firebase CLI (if needed)
-npm install -g firebase-tools
+# 1. Install dependencies
+npm install
 
-# Login to Firebase
+# 2. Build static site (generates ~3000 tool pages from Supabase)
+npm run build
+
+# 3. Deploy to Firebase Hosting
 firebase login
-
-# Deploy
 firebase deploy
 ```
+
+### Adding New Supabase Columns (one-time)
+If the extended fields (pricing, features, tags, etc.) haven't been added yet:
+```bash
+# Run supabase-migration.sql in the Supabase SQL Editor
+```
+
+### Build Output
+The `out/` directory contains the full static site:
+- ~3000 individual tool pages at `/tools/[slug]/`
+- Admin interface at `/admin/` (password: see source)
+- Sitemap at `/sitemap.xml`
+- All pages are pre-rendered HTML (fast, crawlable)
+
+### Domain Setup
+- Firebase Hosting serves aitoolrisk.com
+- Sitemap and robots.txt reference aitoolrisk.com
+- OG tags and canonical URLs use aitoolrisk.com
 
 ## AI Tools Database
 
