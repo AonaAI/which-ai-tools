@@ -14,7 +14,8 @@ import Link from 'next/link';
 import ToolLogo from '@/components/ToolLogo';
 
 export default function Home() {
-  const [allTools, setAllTools] = useState<AITool[]>(staticTools);
+  const [allTools, setAllTools] = useState<AITool[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('All');
   const [selectedRisk, setSelectedRisk] = useState<RiskLevel | 'All'>('All');
@@ -22,10 +23,13 @@ export default function Home() {
   const TOOLS_PER_PAGE = 36;
 
   useEffect(() => {
-    fetchTools().then(setAllTools);
+    fetchTools()
+      .then(setAllTools)
+      .catch(() => setAllTools(staticTools))
+      .finally(() => setIsLoading(false));
   }, []);
 
-  const categories = allTools.length > staticTools.length ? getCategoriesFromTools(allTools) : getCategories();
+  const categories = allTools.length > 0 ? getCategoriesFromTools(allTools) : getCategories();
   const riskLevels: RiskLevel[] = ['Low', 'Medium', 'High', 'Critical'];
 
   const filteredTools = useMemo(() => {
@@ -139,6 +143,37 @@ export default function Home() {
 
       {/* Tools Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {isLoading ? (
+          <>
+            <div className="mb-6 text-gray-400">Loading tools…</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <div key={i} className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm animate-pulse">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-start gap-3 flex-1">
+                      <div className="w-8 h-8 bg-gray-200 rounded mt-1" />
+                      <div>
+                        <div className="h-5 bg-gray-200 rounded w-32 mb-2" />
+                        <div className="h-3 bg-gray-100 rounded w-20" />
+                      </div>
+                    </div>
+                    <div className="h-6 bg-gray-200 rounded-full w-16" />
+                  </div>
+                  <div className="h-3 bg-gray-100 rounded w-full mb-2" />
+                  <div className="h-3 bg-gray-100 rounded w-3/4 mb-4" />
+                  <div className="flex justify-between">
+                    <div className="h-3 bg-gray-100 rounded w-20" />
+                    <div className="flex gap-2">
+                      <div className="h-5 bg-gray-100 rounded w-12" />
+                      <div className="h-5 bg-gray-100 rounded w-12" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        ) : (
+        <>
         <div className="mb-6 text-gray-600">
           Showing {Math.min(currentPage * TOOLS_PER_PAGE, filteredTools.length)} of {filteredTools.length} tools
           {filteredTools.length !== allTools.length && ` (filtered from ${allTools.length})`}
@@ -265,6 +300,8 @@ export default function Home() {
               Next →
             </button>
           </div>
+        )}
+        </>
         )}
       </section>
 
