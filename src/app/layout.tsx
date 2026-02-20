@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 
@@ -20,6 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased overflow-x-hidden">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PVT1MR51PQ"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PVT1MR51PQ');`}
+        </Script>
         <Header />
         {children}
         <footer className="border-t border-gray-200 mt-20 bg-white">
